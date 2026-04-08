@@ -47,10 +47,11 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 
 /* ADVISORS */
 .advisors-divider{border-top:0.5px solid var(--border);padding-top:60px;margin-top:0}
-.advisors-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--border);margin-top:32px}
+.advisors-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:32px;margin-top:32px}
 .advisor-card{background:var(--dark);padding:28px 24px;transition:background 0.18s;cursor:pointer;position:relative}
-.advisor-photo{width:100%;aspect-ratio:1;object-fit:cover;object-position:center top;margin-bottom:12px;display:block;filter:grayscale(20%)}
+.advisor-photo{width:100%;aspect-ratio:1;object-fit:cover;object-position:center center;margin-bottom:12px;display:block}
 .advisor-card::after{content:'';position:absolute;top:0;left:0;right:0;height:1.5px;background:var(--cyan);transform:scaleX(0);transform-origin:left;transition:transform 0.28s ease}
+.advisor-card{border:0.5px solid var(--border)}
 .advisor-card:hover{background:var(--dark3)}
 .advisor-card:hover::after{transform:scaleX(1)}
 .advisor-name{font-size:14px;font-weight:400;color:var(--cream);margin-bottom:6px;line-height:1.3}
@@ -91,14 +92,14 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
   .page-hero{padding:70px 20px 50px}
   .team-section{padding:50px 20px}
   .team-grid{grid-template-columns:repeat(2,1fr);gap:24px}
-  .advisors-grid{grid-template-columns:1fr 1fr}
+  .advisors-grid{grid-template-columns:repeat(2,1fr)}
   .track-grid{grid-template-columns:1fr}
   .track-band{padding:50px 20px}
   footer{padding:24px 20px;flex-direction:column;align-items:flex-start}
 }
 @media(max-width:480px){
   .team-grid{grid-template-columns:1fr 1fr}
-  .advisors-grid{grid-template-columns:1fr}
+  .advisors-grid{grid-template-columns:repeat(2,1fr)}
 }
 </style>
 </head>
@@ -113,11 +114,11 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
     </svg>
   </a>
   <div class="nav-links" id="nav-links">
-    About
-    Team & Track Record
-    Solutions
-    Insights & News
-    Contact
+    <a href="https://precursorearth.github.io/precursor-site/index.html">About</a>
+    <a href="https://precursorearth.github.io/precursor-site/precursor_company.html" class="active">Team & Track Record</a>
+    <a href="https://precursorearth.github.io/precursor-site/precursor_solutions.html">Solutions</a>
+    <a href="https://precursorearth.github.io/precursor-site/precursor_thought_leadership.html">Insights & News</a>
+    <a href="https://precursorearth.github.io/precursor-site/precursor_contact.html" class="nav-cta">Contact</a>
   </div>
   <div class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></div>
 </nav>
@@ -258,7 +259,7 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
       </div>
 
       <div class="advisor-card">
-        <img class="advisor-photo" src="https://precursorearth.github.io/precursor-site/advisor-daniel.png" alt="Daniel Steingart"/>
+        <img class="advisor-photo" src="https://precursorearth.github.io/precursor-site/advisor-daniel.jpg" alt="Daniel Steingart"/>
         <div class="advisor-name">Daniel Steingart</div>
         <div class="advisor-bio">Serial Founder, Battery Scientist, Head of Columbia University's Battery Effort</div>
       </div>
@@ -306,11 +307,11 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
     </svg>
   </a>
   <div class="f-nav">
-    About
-    Team & Track Record
-    Solutions
-    Thought Leadership
-    Contact
+    <a href="https://precursorearth.github.io/precursor-site/index.html">About</a>
+    <a href="https://precursorearth.github.io/precursor-site/precursor_company.html">Team & Track Record</a>
+    <a href="https://precursorearth.github.io/precursor-site/precursor_solutions.html">Solutions</a>
+    <a href="https://precursorearth.github.io/precursor-site/precursor_thought_leadership.html">Insights & News</a>
+    <a href="https://precursorearth.github.io/precursor-site/precursor_contact.html">Contact</a>
   </div>
   <p class="f-legal">Securities offered through Pickwick Capital Partners LLC, an SEC registered broker dealer member FINRA &amp; SIPC.</p>
 </footer>
