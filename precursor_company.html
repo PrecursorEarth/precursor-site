@@ -62,6 +62,16 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 .track-inner{max-width:1200px;margin:0 auto}
 .track-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:40px}
 .track-item{background:var(--dark2);padding:32px 28px}
+.track-blocks{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:40px}
+.track-block{background:var(--dark2);padding:36px 32px}
+.track-block-label{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--cyan);margin-bottom:24px}
+.track-list{list-style:none;display:flex;flex-direction:column;gap:12px}
+.track-list li{font-size:14px;color:var(--cream-dim);line-height:1.55;padding-left:16px;position:relative}
+.track-list li::before{content:"—";position:absolute;left:0;color:var(--cyan);opacity:0.5;font-size:11px}
+.track-prose{font-size:14px;color:var(--cream-dim);line-height:1.75;margin-bottom:14px}
+.track-prose:last-child{margin-bottom:0}
+.track-prose a{color:var(--cyan);text-decoration:none;border-bottom:0.5px solid var(--cyan-dim);transition:opacity 0.18s}
+.track-prose a:hover{opacity:0.75}
 .track-company{font-size:13px;font-weight:400;color:var(--cyan);margin-bottom:6px;letter-spacing:0.04em}
 .track-desc{font-size:12px;color:var(--cream-dim);line-height:1.65}
 
@@ -102,11 +112,11 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
     </svg>
   </a>
   <div class="nav-links" id="nav-links">
-    <a href="https://precursorearth.github.io/precursor-site/index.html">About</a>
-    <a href="https://precursorearth.github.io/precursor-site/precursor_company.html" class="active">Team & Track Record</a>
-    <a href="https://precursorearth.github.io/precursor-site/precursor_solutions.html">Solutions</a>
-    <a href="https://precursorearth.github.io/precursor-site/precursor_thought_leadership.html">Insights & News</a>
-    <a href="https://precursorearth.github.io/precursor-site/precursor_contact.html" class="nav-cta">Contact</a>
+    About
+    Team & Track Record
+    Solutions
+    Insights & News
+    Contact
   </div>
   <div class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></div>
 </nav>
@@ -133,9 +143,8 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
   </div>
   <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto">
     <div class="page-eyebrow">Team & Track Record</div>
-    <h1>Team & Track Record</h1>
-    <p class="lead">Launched by David Yeh, we are a team of veteran infrastructure and climatech practitioners who have helped catalyze the electrification of transport (Tesla), launched the US solar market (LPO), and grown the first carbon markets (Climate Exchange).</p>
-    <p class="lead" style="margin-top:16px">We developed the first clean firm power FOAK (NET Power), sparked the geothermal renaissance (Fervo), supported landmark investment in sustainable aviation fuel, and financed the first US nuclear plant in 30 years (Vogtle).</p>
+    <h1>Meet Precursor</h1>
+    <p class="lead">The deepest bench of FOAK expertise with an unmatched track record.</p>
   </div>
 </div>
 
@@ -143,14 +152,37 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
 <div class="track-band">
   <div class="track-inner">
     <div class="section-tag">Track record</div>
-    <div class="track-grid">
-      <div class="track-item"><div class="track-company">Tesla</div><div class="track-desc">Catalyzed the electrification of transport</div></div>
-      <div class="track-item"><div class="track-company">LPO (DOE)</div><div class="track-desc">Launched the US solar market</div></div>
-      <div class="track-item"><div class="track-company">Climate Exchange</div><div class="track-desc">Grew the first carbon markets</div></div>
-      <div class="track-item"><div class="track-company">NET Power</div><div class="track-desc">First clean firm power FOAK</div></div>
-      <div class="track-item"><div class="track-company">Fervo</div><div class="track-desc">Sparked the geothermal renaissance</div></div>
-      <div class="track-item"><div class="track-company">Sustainable Aviation Fuel</div><div class="track-desc">Supported landmark investment</div></div>
-      <div class="track-item" style="grid-column:1/-1"><div class="track-company">Vogtle Nuclear Plant</div><div class="track-desc">Financed the first US nuclear plant in 30 years</div></div>
+
+    <!-- Three blocks side by side -->
+    <div class="track-blocks">
+
+      <!-- Block 1: Since Launch -->
+      <div class="track-block">
+        <div class="track-block-label">Since launch · Feb 2025</div>
+        <ul class="track-list">
+          <li>Secured billion-dollar offtakes with hyperscalers</li>
+          <li>Reduced client CAPEX by tens of millions</li>
+          <li>Raised $100M+ in FOAK capital</li>
+          <li>Built hundreds of millions in pipeline</li>
+          <li>Negotiated JVs with Global 1000 partners</li>
+          <li>Developed bankable business models &amp; innovative financing roadmaps</li>
+          <li>Led end-to-end project execution</li>
+        </ul>
+      </div>
+
+      <!-- Block 2: The Team -->
+      <div class="track-block">
+        <div class="track-block-label">The team</div>
+        <p class="track-prose">Precursor fields the top team in FOAK — $50B+ deployed across revolutionary projects, 120+ years of collective experience.</p>
+        <p class="track-prose">We helped spark the electrification of transport (Tesla), the US utility-scale solar sector (LPO), and the geothermal (Fervo) and nuclear renaissance (Vogtle).</p>
+      </div>
+
+      <!-- Block 3: Thought Leadership -->
+      <div class="track-block">
+        <div class="track-block-label">Thought leadership</div>
+        <p class="track-prose">We helped establish the FOAK market through defining thought leadership — CTVC's FOAK 101 articles (60K+ reads each) and the Catalyst podcast (~20K listens).</p>
+      </div>
+
     </div>
   </div>
 </div>
@@ -165,7 +197,7 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
         <img src="https://static.wixstatic.com/media/4aad87_47313dd4e0184229969d69b434f0feb7~mv2.jpeg" alt="David Yeh" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
         <div class="team-avatar-placeholder" style="display:none">DY</div>
       </div>
-      <div class="team-name"><a href="https://www.linkedin.com/in/david-yeh-393177/" target="_blank" rel="noopener">David Yeh</a></div>
+      <div class="team-name">David Yeh</div>
       <div class="team-role">FOAK Leader<br>30-year Climate Investor<br>Obama White House Infrastructure Lead</div>
     </div>
 
@@ -174,7 +206,7 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
         <img src="https://static.wixstatic.com/media/4aad87_b77a37f4a58540e7b1bb5fb70f079026~mv2.jpeg" alt="Dong Kim" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
         <div class="team-avatar-placeholder" style="display:none">DK</div>
       </div>
-      <div class="team-name"><a href="https://www.linkedin.com/in/dong-kim-255302b" target="_blank" rel="noopener">Dong Kim</a></div>
+      <div class="team-name">Dong Kim</div>
       <div class="team-role">30-year DOE Veteran<br>Executive Director & Chief Engineer at LPO</div>
     </div>
 
@@ -183,7 +215,7 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
         <img src="https://static.wixstatic.com/media/4aad87_5a401f92093d41969a5f308024e913b2~mv2.png" alt="Bernie Yoo" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
         <div class="team-avatar-placeholder" style="display:none">BY</div>
       </div>
-      <div class="team-name"><a href="https://www.linkedin.com/in/bernardyoo/" target="_blank" rel="noopener">Bernie Yoo</a></div>
+      <div class="team-name">Bernie Yoo</div>
       <div class="team-role">Deeptech Executive<br>Exited Venture-backed Founder/CEO</div>
     </div>
 
@@ -192,7 +224,7 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
         <img src="https://static.wixstatic.com/media/4aad87_b095c0ad536645fba12812ef795eb792~mv2.jpeg" alt="Michael Walton" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
         <div class="team-avatar-placeholder" style="display:none">MW</div>
       </div>
-      <div class="team-name"><a href="https://www.linkedin.com/in/mwalton07/" target="_blank" rel="noopener">Michael Walton</a></div>
+      <div class="team-name">Michael Walton</div>
       <div class="team-role">Government Funding Expert<br>Energy Transition Strategist</div>
     </div>
 
@@ -201,7 +233,7 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
         <img src="https://static.wixstatic.com/media/4aad87_12231cf34f724316ac045b6f50140169~mv2.jpeg" alt="Paul McDonough" style="width:100%;height:100%;object-fit:cover" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
         <div class="team-avatar-placeholder" style="display:none">PM</div>
       </div>
-      <div class="team-name"><a href="https://www.linkedin.com/in/paul-mcdonough-b036322b4/" target="_blank" rel="noopener">Paul McDonough</a></div>
+      <div class="team-name">Paul McDonough</div>
       <div class="team-role">NET Power's FOAK Developer<br>40-year Project Veteran</div>
     </div>
 
@@ -213,42 +245,42 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
     <div class="advisors-grid">
 
       <div class="advisor-card">
-        <div class="advisor-name"><a href="https://www.linkedin.com/in/christian-okoye-22510b20" target="_blank" rel="noopener">Christian Okoye</a></div>
+        <div class="advisor-name">Christian Okoye</div>
         <div class="advisor-bio">Veteran of Generate, Emerson Collective, Sidewalk Infrastructure, and Goldman Sachs</div>
       </div>
 
       <div class="advisor-card">
-        <div class="advisor-name"><a href="https://www.linkedin.com/in/david-b-rogers-3a373611/" target="_blank" rel="noopener">Dave Rogers</a></div>
+        <div class="advisor-name">Dave Rogers</div>
         <div class="advisor-bio">Stanford Adjunct Professor with three decades of project development and finance experience</div>
       </div>
 
       <div class="advisor-card">
-        <div class="advisor-name"><a href="https://www.linkedin.com/in/dansteingart/" target="_blank" rel="noopener">Daniel Steingart</a></div>
+        <div class="advisor-name">Daniel Steingart</div>
         <div class="advisor-bio">Serial Founder, Battery Scientist, Head of Columbia University's Battery Effort</div>
       </div>
 
       <div class="advisor-card">
-        <div class="advisor-name"><a href="https://www.linkedin.com/in/kendra-kuhl-twelve/" target="_blank" rel="noopener">Kendra Kuhl</a></div>
+        <div class="advisor-name">Kendra Kuhl</div>
         <div class="advisor-bio">Former CTO & Cofounder at Twelve</div>
       </div>
 
       <div class="advisor-card">
-        <div class="advisor-name"><a href="https://www.linkedin.com/in/lekkakis/" target="_blank" rel="noopener">Petros Lekkakis</a></div>
+        <div class="advisor-name">Petros Lekkakis</div>
         <div class="advisor-bio">Seasoned FOAK and sustainable infrastructure investor. Partner, IntegrEn</div>
       </div>
 
       <div class="advisor-card">
-        <div class="advisor-name"><a href="https://www.linkedin.com/in/dosingh/" target="_blank" rel="noopener">Dolly Singh</a></div>
+        <div class="advisor-name">Dolly Singh</div>
         <div class="advisor-bio">Founder, Terra Talent & ex-SpaceX, Oculus, Citadel</div>
       </div>
 
       <div class="advisor-card">
-        <div class="advisor-name"><a href="https://www.linkedin.com/in/gtrukenbrod/" target="_blank" rel="noopener">Geoff Trukenbrod</a></div>
+        <div class="advisor-name">Geoff Trukenbrod</div>
         <div class="advisor-bio">CFO at Sedron, ex-CFO at Lanzatech, veteran executive, entrepreneur, and investor</div>
       </div>
 
       <div class="advisor-card">
-        <div class="advisor-name"><a href="https://www.linkedin.com/in/josephfbatir/" target="_blank" rel="noopener">Dr. Joseph Batir</a></div>
+        <div class="advisor-name">Dr. Joseph Batir</div>
         <div class="advisor-bio">Geothermal geoscientist with 15+ years of global exploration and project development experience, led multimillion-dollar exploration programs</div>
       </div>
 
@@ -265,11 +297,11 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
     </svg>
   </a>
   <div class="f-nav">
-    <a href="https://precursorearth.github.io/precursor-site/index.html">About</a>
-    <a href="https://precursorearth.github.io/precursor-site/precursor_company.html">Team & Track Record</a>
-    <a href="https://precursorearth.github.io/precursor-site/precursor_solutions.html">Solutions</a>
-    <a href="https://precursorearth.github.io/precursor-site/precursor_thought_leadership.html">Thought Leadership</a>
-    <a href="https://precursorearth.github.io/precursor-site/precursor_contact.html">Contact</a>
+    About
+    Team & Track Record
+    Solutions
+    Thought Leadership
+    Contact
   </div>
   <p class="f-legal">Securities offered through Pickwick Capital Partners LLC, an SEC registered broker dealer member FINRA &amp; SIPC.</p>
 </footer>
