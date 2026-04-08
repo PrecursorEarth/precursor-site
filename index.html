@@ -621,18 +621,18 @@
           <stop offset="100%" stop-color="#0c0d08"/>
         </linearGradient>
         <radialGradient id="launch-glow" cx="65%" cy="98%" r="42%">
-          <stop offset="0%" stop-color="#C87820" stop-opacity="0.95"/>
-          <stop offset="22%" stop-color="#8a4e10" stop-opacity="0.65"/>
-          <stop offset="55%" stop-color="#3a1e05" stop-opacity="0.3"/>
+          <stop offset="0%" stop-color="#00AADF" stop-opacity="0.7"/>
+          <stop offset="22%" stop-color="#0077aa" stop-opacity="0.45"/>
+          <stop offset="55%" stop-color="#003d55" stop-opacity="0.2"/>
           <stop offset="100%" stop-color="#03080e" stop-opacity="0"/>
         </radialGradient>
         <radialGradient id="launch-glow2" cx="65%" cy="100%" r="65%">
-          <stop offset="0%" stop-color="#a86018" stop-opacity="0.3"/>
+          <stop offset="0%" stop-color="#2DD4A0" stop-opacity="0.18"/>
           <stop offset="100%" stop-color="#03080e" stop-opacity="0"/>
         </radialGradient>
         <!-- Right side warm upper atmosphere -->
         <radialGradient id="upper-warm" cx="88%" cy="15%" r="35%">
-          <stop offset="0%" stop-color="#5a3008" stop-opacity="0.35"/>
+          <stop offset="0%" stop-color="#00AADF" stop-opacity="0.2"/>
           <stop offset="100%" stop-color="#03080e" stop-opacity="0"/>
         </radialGradient>
         <!-- Right side deep blue-teal fill -->
@@ -642,7 +642,7 @@
         </radialGradient>
         <linearGradient id="horizon" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stop-color="#03080e" stop-opacity="0"/>
-          <stop offset="100%" stop-color="#1a0e03" stop-opacity="1"/>
+          <stop offset="100%" stop-color="#030e14" stop-opacity="1"/>
         </linearGradient>
         <linearGradient id="hfade" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stop-color="#03080e" stop-opacity="0"/>
@@ -685,8 +685,8 @@
       <path d="M0 832 Q180 826 320 833 Q480 840 580 828 Q720 815 860 828 Q1020 841 1140 825 Q1280 810 1400 828 L1400 900 L0 900 Z" fill="#050709"/>
 
       <!-- Launch site glow on ground -->
-      <ellipse cx="910" cy="834" rx="90" ry="14" fill="#C87820" fill-opacity="0.45"/>
-      <ellipse cx="910" cy="834" rx="160" ry="8" fill="#C87820" fill-opacity="0.2"/>
+      <ellipse cx="910" cy="834" rx="90" ry="14" fill="#00AADF" fill-opacity="0.35"/>
+      <ellipse cx="910" cy="834" rx="160" ry="8" fill="#2DD4A0" fill-opacity="0.15"/>
 
       <!-- Structural elements right side — gives the empty area content -->
       <!-- Faint horizon arc lines suggesting curvature of earth -->
@@ -708,20 +708,20 @@
         stroke-linecap="round" filter="url(#arc-blur-soft)"/>
       <!-- Mid glow -->
       <path d="M910 828 C908 720, 890 600, 868 490 C848 390, 820 300, 790 220 C765 150, 740 96, 718 48"
-        fill="none" stroke="#D4921C" stroke-width="12" stroke-opacity="0.2"
+        fill="none" stroke="#2DD4A0" stroke-width="12" stroke-opacity="0.2"
         stroke-linecap="round"/>
       <!-- Inner glow -->
       <path d="M910 828 C908 720, 890 600, 868 490 C848 390, 820 300, 790 220 C765 150, 740 96, 718 48"
-        fill="none" stroke="#E8B040" stroke-width="5" stroke-opacity="0.5"
+        fill="none" stroke="#00AADF" stroke-width="5" stroke-opacity="0.5"
         stroke-linecap="round" filter="url(#arc-blur)"/>
       <!-- Core bright line -->
       <path d="M910 828 C908 720, 890 600, 868 490 C848 390, 820 300, 790 220 C765 150, 740 96, 718 48"
-        fill="none" stroke="#F5CC70" stroke-width="1.5" stroke-opacity="0.9"
+        fill="none" stroke="#7EECD8" stroke-width="1.5" stroke-opacity="0.9"
         stroke-linecap="round"/>
 
       <!-- Rocket tip -->
-      <circle cx="718" cy="48" r="12" fill="#F0C060" fill-opacity="0.2" filter="url(#glow-tip)"/>
-      <circle cx="718" cy="48" r="4.5" fill="#FFD88A" fill-opacity="0.92"/>
+      <circle cx="718" cy="48" r="12" fill="#00AADF" fill-opacity="0.25" filter="url(#glow-tip)"/>
+      <circle cx="718" cy="48" r="4.5" fill="#2DD4A0" fill-opacity="0.92"/>
       <circle cx="718" cy="48" r="2" fill="white" fill-opacity="0.98"/>
 
       <!-- Faint smoke trail -->
@@ -786,13 +786,13 @@
         <circle cx="280" cy="160" r="0.8" fill-opacity="0.4"/>
       </g>
       <!-- Amber stars near arc -->
-      <g fill="#E8B040">
+      <g fill="#2DD4A0">
         <circle cx="760" cy="20" r="1.3" fill-opacity="0.65"/>
         <circle cx="840" cy="58" r="0.9" fill-opacity="0.45"/>
         <circle cx="940" cy="22" r="1.1" fill-opacity="0.55"/>
       </g>
-      <circle cx="760" cy="20" r="4" fill="#E8B040" fill-opacity="0.12" filter="url(#star-glow)"/>
-      <circle cx="940" cy="22" r="3" fill="#E8B040" fill-opacity="0.1" filter="url(#star-glow)"/>
+      <circle cx="760" cy="20" r="4" fill="#00AADF" fill-opacity="0.15" filter="url(#star-glow)"/>
+      <circle cx="940" cy="22" r="3" fill="#2DD4A0" fill-opacity="0.12" filter="url(#star-glow)"/>
 
       <!-- Right side: concentric arc pattern fading left -->
       <clipPath id="right-clip">
