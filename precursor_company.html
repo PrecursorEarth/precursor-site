@@ -49,6 +49,7 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 .advisors-divider{border-top:0.5px solid var(--border);padding-top:60px;margin-top:0}
 .advisors-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);margin-top:32px}
 .advisor-card{background:var(--dark);padding:28px 24px;transition:background 0.18s;cursor:pointer;position:relative}
+.advisor-photo{width:100%;aspect-ratio:1;object-fit:cover;object-position:center top;margin-bottom:16px;display:block;filter:grayscale(20%)}
 .advisor-card::after{content:'';position:absolute;top:0;left:0;right:0;height:1.5px;background:var(--cyan);transform:scaleX(0);transform-origin:left;transition:transform 0.28s ease}
 .advisor-card:hover{background:var(--dark3)}
 .advisor-card:hover::after{transform:scaleX(1)}
@@ -245,41 +246,49 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
     <div class="advisors-grid">
 
       <div class="advisor-card">
+        <img class="advisor-photo" src="https://precursorearth.github.io/precursor-site/advisor-christian.jpg" alt="Christian Okoye"/>
         <div class="advisor-name">Christian Okoye</div>
         <div class="advisor-bio">Veteran of Generate, Emerson Collective, Sidewalk Infrastructure, and Goldman Sachs</div>
       </div>
 
       <div class="advisor-card">
+        <img class="advisor-photo" src="https://precursorearth.github.io/precursor-site/advisor-dave.jpg" alt="Dave Rogers"/>
         <div class="advisor-name">Dave Rogers</div>
         <div class="advisor-bio">Stanford Adjunct Professor with three decades of project development and finance experience</div>
       </div>
 
       <div class="advisor-card">
+        <img class="advisor-photo" src="https://precursorearth.github.io/precursor-site/advisor-daniel.png" alt="Daniel Steingart"/>
         <div class="advisor-name">Daniel Steingart</div>
         <div class="advisor-bio">Serial Founder, Battery Scientist, Head of Columbia University's Battery Effort</div>
       </div>
 
       <div class="advisor-card">
+        <img class="advisor-photo" src="https://precursorearth.github.io/precursor-site/advisor-kendra.jpg" alt="Kendra Kuhl"/>
         <div class="advisor-name">Kendra Kuhl</div>
         <div class="advisor-bio">Former CTO & Cofounder at Twelve</div>
       </div>
 
       <div class="advisor-card">
+        <img class="advisor-photo" src="https://precursorearth.github.io/precursor-site/advisor-petros.jpg" alt="Petros Lekkakis"/>
         <div class="advisor-name">Petros Lekkakis</div>
         <div class="advisor-bio">Seasoned FOAK and sustainable infrastructure investor. Partner, IntegrEn</div>
       </div>
 
       <div class="advisor-card">
+        <img class="advisor-photo" src="https://precursorearth.github.io/precursor-site/advisor-dolly.jpg" alt="Dolly Singh"/>
         <div class="advisor-name">Dolly Singh</div>
         <div class="advisor-bio">Founder, Terra Talent & ex-SpaceX, Oculus, Citadel</div>
       </div>
 
       <div class="advisor-card">
+        <img class="advisor-photo" src="https://precursorearth.github.io/precursor-site/advisor-geoff.jpg" alt="Geoff Trukenbrod"/>
         <div class="advisor-name">Geoff Trukenbrod</div>
         <div class="advisor-bio">CFO at Sedron, ex-CFO at Lanzatech, veteran executive, entrepreneur, and investor</div>
       </div>
 
       <div class="advisor-card">
+        <img class="advisor-photo" src="https://precursorearth.github.io/precursor-site/advisor-joe.jpg" alt="Dr. Joseph Batir"/>
         <div class="advisor-name">Dr. Joseph Batir</div>
         <div class="advisor-bio">Geothermal geoscientist with 15+ years of global exploration and project development experience, led multimillion-dollar exploration programs</div>
       </div>
