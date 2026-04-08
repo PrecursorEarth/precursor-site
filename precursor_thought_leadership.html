@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Insights & News | Precursor</title>
+<title>Thought Leadership & News | Precursor</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -35,8 +35,6 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 .article-card:hover{background:var(--dark3)}
 .article-card:hover::before{transform:scaleX(1)}
 .article-source{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--cyan);opacity:0.75}
-.article-logo{height:32px;width:auto;max-width:140px;object-fit:contain;opacity:0.6;transition:opacity 0.18s;display:block}
-.article-card:hover .article-logo{opacity:1}
 .article-title{font-size:15px;font-weight:400;color:var(--cream);line-height:1.45}
 .article-arrow{font-size:14px;color:var(--cyan);margin-top:auto;padding-top:8px;opacity:0.55;transition:opacity 0.18s}
 .article-card:hover .article-arrow{opacity:1}
@@ -87,9 +85,10 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
   </a>
   <div class="nav-links" id="nav-links">
     <a href="https://precursorearth.github.io/precursor-site/index.html">About</a>
-    <a href="https://precursorearth.github.io/precursor-site/precursor_company.html">Team & Track Record</a>
+    <a href="https://precursorearth.github.io/precursor-site/precursor_company.html">Company</a>
     <a href="https://precursorearth.github.io/precursor-site/precursor_solutions.html">Solutions</a>
-    <a href="https://precursorearth.github.io/precursor-site/precursor_thought_leadership.html" class="active">Insights & News</a>
+    <a href="https://precursorearth.github.io/precursor-site/precursor_thought_leadership.html" class="active">Thought Leadership & News</a>
+    <a href="https://precursorearth.github.io/precursor-site/precursor_readinglist.html">Reading List</a>
     <a href="https://precursorearth.github.io/precursor-site/precursor_contact.html" class="nav-cta">Contact</a>
   </div>
   <div class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></div>
@@ -108,7 +107,7 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
     </svg>
   </div>
   <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto">
-    <div class="page-eyebrow">Insights & News</div>
+    <div class="page-eyebrow">Thought Leadership & News</div>
     <h1>Featured articles, podcasts,<br>and interviews</h1>
     <p>Precursor's thought leadership helped launch the FOAK market.</p>
     <p>Part of our mission is to open source best practices, lessons learned, and solutions for FOAK.</p>
@@ -121,61 +120,61 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
   <div class="articles-grid">
 
     <a class="article-card" href="https://www.linkedin.com/pulse/how-win-hyperscaler-ppa-learnings-from-decarb-connect-david-yeh-rjnyc/" target="_blank" rel="noopener">
-      <img class="article-logo" src="https://precursorearth.github.io/precursor-site/logo-linkedin.png" alt="LinkedIn"/>
+      <div class="article-source">LinkedIn</div>
       <div class="article-title">How to Win a Hyperscaler PPA — Learnings from the Decarb Connect Collab with Arbor Energy, Fervo, Daylight, Microsoft, PG&E, & Precursor</div>
       <div class="article-arrow">↗</div>
     </a>
 
     <a class="article-card" href="https://www.youtube.com/watch?v=LDptVSnfTn4&t=1s" target="_blank" rel="noopener">
-      <img class="article-logo" src="https://precursorearth.github.io/precursor-site/logo-oggn.png" alt="OGGN Podcast"/>
+      <div class="article-source">OGGN Podcast</div>
       <div class="article-title">The Future of Energy: Geothermal and First-of-a-Kind Technologies</div>
       <div class="article-arrow">↗</div>
     </a>
 
     <a class="article-card" href="https://www.occam-edge.com/blog" target="_blank" rel="noopener">
-      <img class="article-logo" src="https://precursorearth.github.io/precursor-site/logo-occam.png" alt="Occam Edge"/>
+      <div class="article-source">Occam Edge — White Paper</div>
       <div class="article-title">(Boring) Nuclear to the Rescue???</div>
       <div class="article-arrow">↗</div>
     </a>
 
     <a class="article-card" href="https://decarbconnect.com/foak-2-0-what-i-learned-in-the-last-year-since-foak-emerged-as-a-concept/" target="_blank" rel="noopener">
-      <img class="article-logo" src="https://precursorearth.github.io/precursor-site/logo-decarb.png" alt="Decarb Connect"/>
+      <div class="article-source">Decarb Connect</div>
       <div class="article-title">FOAK 2.0 — What I learned in the last year since FOAK emerged as a concept</div>
       <div class="article-arrow">↗</div>
     </a>
 
     <a class="article-card" href="https://www.ctvc.co/meet-the-foak-folks/?ref=ctvc-by-sightline-climate-newsletter" target="_blank" rel="noopener">
-      <img class="article-logo" src="https://precursorearth.github.io/precursor-site/logo-ctvc.svg" alt="CTVC"/>
+      <div class="article-source">CTVC</div>
       <div class="article-title">Meet the FOAK Folks (A Q&A with Precursor's David Yeh and Mark1's Julian Ryba-White, new strategic partners in the ecosystem)</div>
       <div class="article-arrow">↗</div>
     </a>
 
     <a class="article-card" href="https://www.latitudemedia.com/news/catalyst-financing-first-of-a-kind-climate-assets" target="_blank" rel="noopener">
-      <img class="article-logo" src="https://precursorearth.github.io/precursor-site/logo-latitude.png" alt="Latitude Media"/>
+      <div class="article-source">Latitude Media</div>
       <div class="article-title">These DOE alums want to help scale the next Tesla</div>
       <div class="article-arrow">↗</div>
     </a>
 
     <a class="article-card" href="https://www.latitudemedia.com/news/catalyst-financing-first-of-a-kind-climate-assets" target="_blank" rel="noopener">
-      <img class="article-logo" src="https://precursorearth.github.io/precursor-site/logo-latitude.png" alt="Catalyst — Latitude Media"/>
+      <div class="article-source">Catalyst — Shayle Kann</div>
       <div class="article-title">Financing First-of-A-Kind Climate Assets</div>
       <div class="article-arrow">↗</div>
     </a>
 
     <a class="article-card" href="https://www.youtube.com/watch?v=UmXtgmBOZFU" target="_blank" rel="noopener">
-      <img class="article-logo" src="https://precursorearth.github.io/precursor-site/logo-ctvc.svg" alt="CTVC"/>
+      <div class="article-source">CTVC — Webinar</div>
       <div class="article-title">Line of Sight: To FOAK and beyond</div>
       <div class="article-arrow">↗</div>
     </a>
 
     <a class="article-card" href="https://www.wsj.com/business/climate-change-startups-investment-business-8f5c83be" target="_blank" rel="noopener">
-      <img class="article-logo" src="https://precursorearth.github.io/precursor-site/logo-wsj.png" alt="Wall Street Journal"/>
+      <div class="article-source">Wall Street Journal</div>
       <div class="article-title">It's Crunchtime for a New Generation of Climate Startups (paywall)</div>
       <div class="article-arrow">↗</div>
     </a>
 
     <a class="article-card" href="https://terraalphainvestments.com/terra-alpha-voices-david-yeh/" target="_blank" rel="noopener">
-      <img class="article-logo" src="https://precursorearth.github.io/precursor-site/logo-terra.jpg" alt="Terra Alpha"/>
+      <div class="article-source">Terra Alpha — Interview</div>
       <div class="article-title">Terra Alpha Voices — David Yeh</div>
       <div class="article-arrow">↗</div>
     </a>
@@ -221,8 +220,9 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
     </svg>
   </a>
   <div class="f-nav">
-    <a href="https://precursorearth.github.io/precursor-site/index.html">About</a><a href="https://precursorearth.github.io/precursor-site/precursor_company.html">Team & Track Record</a>
-    <a href="https://precursorearth.github.io/precursor-site/precursor_solutions.html">Solutions</a><a href="https://precursorearth.github.io/precursor-site/precursor_thought_leadership.html">Thought Leadership</a><a href="https://precursorearth.github.io/precursor-site/precursor_contact.html">Contact</a>
+    <a href="https://precursorearth.github.io/precursor-site/index.html">About</a><a href="https://precursorearth.github.io/precursor-site/precursor_company.html">Company</a>
+    <a href="https://precursorearth.github.io/precursor-site/precursor_solutions.html">Solutions</a><a href="https://precursorearth.github.io/precursor-site/precursor_thought_leadership.html">Thought Leadership</a>
+    <a href="https://precursorearth.github.io/precursor-site/precursor_readinglist.html">Reading List</a><a href="https://precursorearth.github.io/precursor-site/precursor_contact.html">Contact</a>
   </div>
   <p class="f-legal">Securities offered through Pickwick Capital Partners LLC, an SEC registered broker dealer member FINRA &amp; SIPC.</p>
 </footer>
