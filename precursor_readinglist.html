@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Reading List | Precursor</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--cyan:#00AADF;--cyan-dim:rgba(0,170,223,0.4);--cyan-faint:rgba(0,170,223,0.07);--cream:#E8E4DA;--cream-dim:rgba(232,228,218,0.52);--dark:#05080a;--dark2:#090d10;--dark3:#0d1318;--border:rgba(0,170,223,0.13)}
+html{scroll-behavior:smooth}
+body{background:var(--dark);color:var(--cream);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;background:rgba(5,8,10,0.94);backdrop-filter:blur(14px);border-bottom:0.5px solid var(--border)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-size:11px;letter-spacing:0.09em;text-transform:uppercase;color:var(--cream-dim);text-decoration:none;transition:color 0.18s}
+.nav-links a:hover,.nav-links a.active{color:var(--cyan)}
+.nav-cta{color:var(--cyan)!important;border:0.5px solid var(--cyan-dim)!important;padding:6px 16px;border-radius:3px}
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.nav-toggle span{display:block;width:22px;height:1.5px;background:var(--cream)}
+.page-eyebrow{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--cyan);margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.page-eyebrow::before{content:'';width:24px;height:0.5px;background:var(--cyan);display:inline-block;flex-shrink:0}
+
+.page-hero{padding:100px 48px 72px;border-bottom:0.5px solid var(--border);position:relative;overflow:hidden}
+.page-hero h1{font-size:clamp(32px,5vw,60px);font-weight:400;line-height:1.08;letter-spacing:-0.02em;color:var(--cream);margin-bottom:20px}
+
+/* FEATURED DOWNLOAD */
+.featured-download{background:var(--dark2);border-bottom:0.5px solid var(--border);padding:40px 48px}
+.featured-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.featured-text p{font-size:14px;color:var(--cream-dim);line-height:1.7}
+.featured-text strong{color:var(--cream);font-weight:400}
+.btn-cyan{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--cyan);border:0.5px solid var(--cyan-dim);padding:11px 24px;border-radius:3px;text-decoration:none;cursor:pointer;background:var(--cyan-faint);transition:box-shadow 0.18s;display:inline-block;white-space:nowrap;flex-shrink:0}
+.btn-cyan:hover{box-shadow:0 0 22px rgba(0,170,223,0.14)}
+
+/* READING LIST */
+.reading-section{padding:72px 48px;max-width:1200px;margin:0 auto}
+.section-tag{font-size:10px;letter-spacing:0.17em;text-transform:uppercase;color:var(--cyan);margin-bottom:28px;display:flex;align-items:center;gap:10px}
+.section-tag::before{content:'';width:16px;height:0.5px;background:var(--cyan);display:inline-block;flex-shrink:0}
+
+.reading-list{display:flex;flex-direction:column;gap:1px;background:var(--border)}
+.reading-item{background:var(--dark);display:flex;align-items:flex-start;gap:0;cursor:pointer;transition:background 0.18s;text-decoration:none;position:relative}
+.reading-item::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--cyan);transform:scaleY(0);transform-origin:top;transition:transform 0.28s ease}
+.reading-item:hover{background:var(--dark3)}
+.reading-item:hover::before{transform:scaleY(1)}
+.reading-num{font-size:11px;font-weight:400;color:var(--cyan);letter-spacing:0.1em;padding:28px 28px 28px 28px;min-width:72px;flex-shrink:0;line-height:1}
+.reading-body{padding:24px 28px 24px 0;flex:1;border-left:0.5px solid var(--border)}
+.reading-source{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--cyan);opacity:0.7;margin-bottom:6px}
+.reading-title{font-size:14px;color:var(--cream);line-height:1.5}
+.reading-arrow{font-size:14px;color:var(--cyan);padding:28px 28px 28px 0;opacity:0.4;transition:opacity 0.18s;flex-shrink:0;align-self:center}
+.reading-item:hover .reading-arrow{opacity:1}
+
+footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+.f-nav{display:flex;gap:24px;flex-wrap:wrap}
+.f-nav a{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--cream-dim);text-decoration:none;transition:color 0.18s}
+.f-nav a:hover{color:var(--cyan)}
+.f-legal{font-size:10px;color:rgba(232,228,218,0.22);max-width:520px;line-height:1.5;width:100%}
+
+@media(max-width:768px){
+  nav{padding:16px 20px}.nav-links{display:none}
+  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(5,8,10,0.97);padding:20px;gap:16px;border-bottom:0.5px solid var(--border)}
+  .nav-toggle{display:flex}
+  .page-hero{padding:70px 20px 50px}
+  .featured-download{padding:32px 20px}
+  .reading-section{padding:48px 20px}
+  .reading-num{padding:20px 16px;min-width:52px}
+  .reading-body{padding:18px 16px 18px 0}
+  .reading-arrow{padding:20px 16px 20px 0}
+  footer{padding:24px 20px;flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<nav id="top-nav">
+  <a href="https://www.precursor.earth" class="nav-logo" aria-label="Precursor home">
+    <svg viewBox="0 0 230 30" xmlns="http://www.w3.org/2000/svg" style="height:26px;width:auto;display:block">
+      <line x1="2" y1="27" x2="16" y2="3" stroke="#00AADF" stroke-width="3.2" stroke-linecap="round"/>
+      <line x1="10" y1="27" x2="24" y2="3" stroke="#00AADF" stroke-width="1.4" stroke-linecap="round" stroke-opacity="0.38"/>
+      <text x="32" y="24" font-family="'Bebas Neue','Arial Narrow','Impact',sans-serif" font-weight="400" font-size="24" letter-spacing="3" fill="#E8E4DA">PRECURSOR</text>
+    </svg>
+  </a>
+  <div class="nav-links" id="nav-links">
+    <a href="https://www.precursor.earth">About</a>
+    <a href="https://www.precursor.earth/company">Company</a>
+    <a href="https://www.precursor.earth/solutions-1">Solutions</a>
+    <a href="https://www.precursor.earth/thought-leadership">Thought Leadership & News</a>
+    <a href="https://www.precursor.earth/readinglist" class="active">Reading List</a>
+    <a href="https://www.precursor.earth/contact" class="nav-cta">Contact</a>
+  </div>
+  <div class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-hero">
+  <div style="position:absolute;inset:0;pointer-events:none" aria-hidden="true">
+    <svg viewBox="0 0 1400 280" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+      <defs><radialGradient id="rg1" cx="80%" cy="50%" r="50%"><stop offset="0%" stop-color="#003d5c" stop-opacity="0.4"/><stop offset="100%" stop-color="#05080a" stop-opacity="0"/></radialGradient></defs>
+      <rect width="1400" height="280" fill="#05080a"/>
+      <rect width="1400" height="280" fill="url(#rg1)"/>
+      <g stroke="rgba(0,170,223,0.03)" stroke-width="0.5">
+        <line x1="0" y1="70" x2="1400" y2="70"/><line x1="0" y1="140" x2="1400" y2="140"/><line x1="0" y1="210" x2="1400" y2="210"/>
+        <line x1="350" y1="0" x2="350" y2="280"/><line x1="700" y1="0" x2="700" y2="280"/><line x1="1050" y1="0" x2="1050" y2="280"/>
+      </g>
+    </svg>
+  </div>
+  <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto">
+    <div class="page-eyebrow">Reading List</div>
+    <h1>Reading List</h1>
+  </div>
+</div>
+
+<!-- FEATURED DOWNLOAD -->
+<div class="featured-download">
+  <div class="featured-inner">
+    <div class="featured-text">
+      <p>Download Sightline Climate's <strong>FOAK guide</strong> — the definitive resource for first-of-a-kind climate project development.</p>
+    </div>
+    <a class="btn-cyan" href="https://www.sightlineclimate.com/foak-guide" target="_blank" rel="noopener">Download FOAK Guide ↗</a>
+  </div>
+</div>
+
+<!-- READING LIST -->
+<div class="reading-section">
+  <div class="section-tag">Essential reading</div>
+  <div class="reading-list">
+
+    <a class="reading-item" href="https://www.breakthroughenergy.org/news/unlocking-capital-for-climate-tech-projects-the-12-keys-to-scaling-up/" target="_blank" rel="noopener">
+      <div class="reading-num">01</div>
+      <div class="reading-body">
+        <div class="reading-source">Breakthrough Energy</div>
+        <div class="reading-title">Unlocking Capital for Climate Tech Projects: The 12 Keys to Scaling-up</div>
+      </div>
+      <div class="reading-arrow">↗</div>
+    </a>
+
+    <a class="reading-item" href="https://decarbconnect.com/foak-2-0-what-i-learned-in-the-last-year-since-foak-emerged-as-a-concept/" target="_blank" rel="noopener">
+      <div class="reading-num">02</div>
+      <div class="reading-body">
+        <div class="reading-source">Decarb Connect Podcast</div>
+        <div class="reading-title">FOAK 2.0 — What I learned in the last year since FOAK emerged as a concept with David Yeh</div>
+      </div>
+      <div class="reading-arrow">↗</div>
+    </a>
+
+    <a class="reading-item" href="https://www.ctvc.co/meet-the-foak-folks/?ref=ctvc-by-sightline-climate-newsletter" target="_blank" rel="noopener">
+      <div class="reading-num">03</div>
+      <div class="reading-body">
+        <div class="reading-source">CTVC</div>
+        <div class="reading-title">Meet the FOAK Folks (A Q&A with Precursor's David Yeh and Mark1's Julian Ryba-White, new strategic partners in the ecosystem)</div>
+      </div>
+      <div class="reading-arrow">↗</div>
+    </a>
+
+    <a class="reading-item" href="https://www.latitudemedia.com/news/catalyst-financing-first-of-a-kind-climate-assets" target="_blank" rel="noopener">
+      <div class="reading-num">04</div>
+      <div class="reading-body">
+        <div class="reading-source">Catalyst with Shayle Kann</div>
+        <div class="reading-title">Financing First-of-A-Kind Climate Assets</div>
+      </div>
+      <div class="reading-arrow">↗</div>
+    </a>
+
+    <a class="reading-item" href="https://www.ctvc.co/venture-to-foak-duolingo/" target="_blank" rel="noopener">
+      <div class="reading-num">05</div>
+      <div class="reading-body">
+        <div class="reading-source">CTVC</div>
+        <div class="reading-title">Venture to Project Finance Duolingo (Part 1 of 4-part series)</div>
+      </div>
+      <div class="reading-arrow">↗</div>
+    </a>
+
+    <a class="reading-item" href="https://www.ctvc.co/the-foak-checklist/" target="_blank" rel="noopener">
+      <div class="reading-num">06</div>
+      <div class="reading-body">
+        <div class="reading-source">CTVC</div>
+        <div class="reading-title">The FOAK Checklist (Part 2 of 4-part series)</div>
+      </div>
+      <div class="reading-arrow">↗</div>
+    </a>
+
+    <a class="reading-item" href="https://www.ctvc.co/foak-financing-the-good-the-bad-and-the-eligible/" target="_blank" rel="noopener">
+      <div class="reading-num">07</div>
+      <div class="reading-body">
+        <div class="reading-source">CTVC</div>
+        <div class="reading-title">FOAK Financing: The Good, The Bad, and The Eligible (Part 3 of 4-part series)</div>
+      </div>
+      <div class="reading-arrow">↗</div>
+    </a>
+
+    <a class="reading-item" href="https://www.ctvc.co/from-foak-to-noak/" target="_blank" rel="noopener">
+      <div class="reading-num">08</div>
+      <div class="reading-body">
+        <div class="reading-source">CTVC</div>
+        <div class="reading-title">From FOAK to NOAK (Part 4 of 4-part series)</div>
+      </div>
+      <div class="reading-arrow">↗</div>
+    </a>
+
+    <a class="reading-item" href="https://lnkd.in/en-MJtck" target="_blank" rel="noopener">
+      <div class="reading-num">09</div>
+      <div class="reading-body">
+        <div class="reading-source">Catalyst with Shayle Kann</div>
+        <div class="reading-title">FOAK Tales with Mario Fernandez</div>
+      </div>
+      <div class="reading-arrow">↗</div>
+    </a>
+
+    <a class="reading-item" href="https://law.stanford.edu/publications/guidebook-for-early-climate-infrastructure-case-studies-of-first-of-a-kind-projects/" target="_blank" rel="noopener">
+      <div class="reading-num">10</div>
+      <div class="reading-body">
+        <div class="reading-source">Stanford University</div>
+        <div class="reading-title">Guidebook for Early Climate Infrastructure: Case Studies of First of a Kind Projects</div>
+      </div>
+      <div class="reading-arrow">↗</div>
+    </a>
+
+    <a class="reading-item" href="https://www.energy.gov/sites/default/files/2024-11/FOAK%20Financing%20and%20Development%20Approaches_112024_vf.pdf" target="_blank" rel="noopener">
+      <div class="reading-num">11</div>
+      <div class="reading-body">
+        <div class="reading-source">OCED — U.S. Department of Energy</div>
+        <div class="reading-title">Learning from Case Studies: Financing and Development Approaches from Recent First-of-a-Kind Projects</div>
+      </div>
+      <div class="reading-arrow">↗</div>
+    </a>
+
+    <a class="reading-item" href="https://viaseparations.com/wp-content/uploads/2024/12/Via-Separations-White-Paper-Dec.-2024.pdf" target="_blank" rel="noopener">
+      <div class="reading-num">12</div>
+      <div class="reading-body">
+        <div class="reading-source">Via Separations</div>
+        <div class="reading-title">Transforming Industrial Manufacturing: Via Separations Delivers Energy-Efficient Process Intensification</div>
+      </div>
+      <div class="reading-arrow">↗</div>
+    </a>
+
+  </div>
+</div>
+
+<footer>
+  <a href="https://www.precursor.earth" aria-label="Precursor home">
+    <svg viewBox="0 0 200 26" xmlns="http://www.w3.org/2000/svg" style="height:20px;width:auto;display:block">
+      <line x1="2" y1="23" x2="13" y2="3" stroke="#00AADF" stroke-width="2.8" stroke-linecap="round"/>
+      <line x1="9" y1="23" x2="20" y2="3" stroke="#00AADF" stroke-width="1.2" stroke-linecap="round" stroke-opacity="0.38"/>
+      <text x="27" y="21" font-family="'Bebas Neue','Arial Narrow','Impact',sans-serif" font-weight="400" font-size="20" letter-spacing="3" fill="#E8E4DA" fill-opacity="0.6">PRECURSOR</text>
+    </svg>
+  </a>
+  <div class="f-nav">
+    <a href="https://www.precursor.earth">About</a><a href="https://www.precursor.earth/company">Company</a>
+    <a href="https://www.precursor.earth/solutions-1">Solutions</a><a href="https://www.precursor.earth/thought-leadership">Thought Leadership</a>
+    <a href="https://www.precursor.earth/readinglist">Reading List</a><a href="https://www.precursor.earth/contact">Contact</a>
+  </div>
+  <p class="f-legal">Securities offered through Pickwick Capital Partners LLC, an SEC registered broker dealer member FINRA &amp; SIPC.</p>
+</footer>
+<script>
+  const t=document.getElementById('nav-toggle'),l=document.getElementById('nav-links');
+  if(t&&l){t.addEventListener('click',()=>l.classList.toggle('open'));l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.remove('open')))}
+</script>
+</body>
+</html>
