@@ -298,22 +298,53 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
   </div>
 </div>
 
-<footer>
-  <a href="https://precursorearth.github.io/precursor-site/index.html" aria-label="Precursor home">
-    <svg viewBox="0 0 200 26" xmlns="http://www.w3.org/2000/svg" style="height:20px;width:auto;display:block">
-      <line x1="2" y1="23" x2="13" y2="3" stroke="#00AADF" stroke-width="2.8" stroke-linecap="round"/>
-      <line x1="9" y1="23" x2="20" y2="3" stroke="#00AADF" stroke-width="1.2" stroke-linecap="round" stroke-opacity="0.38"/>
-      <text x="27" y="21" font-family="'Bebas Neue','Arial Narrow','Impact',sans-serif" font-weight="400" font-size="20" letter-spacing="3" fill="#E8E4DA" fill-opacity="0.6">PRECURSOR</text>
+<footer style="position:relative;overflow:hidden;">
+  <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;">
+    <svg viewBox="0 0 1400 120" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+      <defs>
+        <radialGradient id="footer-glow" cx="50%" cy="100%" r="70%">
+          <stop offset="0%" stop-color="#003d5c" stop-opacity="0.55"/>
+          <stop offset="100%" stop-color="#05080a" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="footer-glow2" cx="50%" cy="100%" r="50%">
+          <stop offset="0%" stop-color="#2DD4A0" stop-opacity="0.08"/>
+          <stop offset="100%" stop-color="#05080a" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="1400" height="120" fill="#05080a"/>
+      <rect width="1400" height="120" fill="url(#footer-glow)"/>
+      <rect width="1400" height="120" fill="url(#footer-glow2)"/>
+      <circle cx="700" cy="140" r="120" fill="none" stroke="#00AADF" stroke-width="0.5" stroke-opacity="0.20"/>
+      <circle cx="700" cy="140" r="220" fill="none" stroke="#2DD4A0" stroke-width="0.5" stroke-opacity="0.14"/>
+      <circle cx="700" cy="140" r="320" fill="none" stroke="#00AADF" stroke-width="0.4" stroke-opacity="0.09"/>
+      <circle cx="700" cy="140" r="440" fill="none" stroke="#2DD4A0" stroke-width="0.4" stroke-opacity="0.06"/>
+      <circle cx="700" cy="140" r="580" fill="none" stroke="#00AADF" stroke-width="0.4" stroke-opacity="0.04"/>
+      <g stroke="rgba(0,170,223,0.04)" stroke-width="0.5">
+        <line x1="700" y1="140" x2="200" y2="0"/>
+        <line x1="700" y1="140" x2="450" y2="0"/>
+        <line x1="700" y1="140" x2="700" y2="0"/>
+        <line x1="700" y1="140" x2="950" y2="0"/>
+        <line x1="700" y1="140" x2="1200" y2="0"/>
+      </g>
     </svg>
-  </a>
-  <div class="f-nav">
-    <a href="https://precursorearth.github.io/precursor-site/index.html">About</a>
-    <a href="https://precursorearth.github.io/precursor-site/precursor_company.html">Team & Track Record</a>
-    <a href="https://precursorearth.github.io/precursor-site/precursor_solutions.html">Solutions</a>
-    <a href="https://precursorearth.github.io/precursor-site/precursor_thought_leadership.html">Insights & News</a>
-    <a href="https://precursorearth.github.io/precursor-site/precursor_contact.html">Contact</a>
   </div>
-  <p class="f-legal">Securities offered through Pickwick Capital Partners LLC, an SEC registered broker dealer member FINRA &amp; SIPC.</p>
+  <div style="position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;width:100%">
+    <a href="https://precursorearth.github.io/precursor-site/index.html" aria-label="Precursor home">
+      <svg viewBox="0 0 200 26" xmlns="http://www.w3.org/2000/svg" style="height:20px;width:auto;display:block">
+        <line x1="2" y1="23" x2="13" y2="3" stroke="#00AADF" stroke-width="2.8" stroke-linecap="round"/>
+        <line x1="9" y1="23" x2="20" y2="3" stroke="#00AADF" stroke-width="1.2" stroke-linecap="round" stroke-opacity="0.38"/>
+        <text x="27" y="21" font-family="'Bebas Neue','Arial Narrow','Impact',sans-serif" font-weight="400" font-size="20" letter-spacing="3" fill="#E8E4DA" fill-opacity="0.6">PRECURSOR</text>
+      </svg>
+    </a>
+    <div class="f-nav">
+      <a href="https://precursorearth.github.io/precursor-site/index.html">About</a>
+      <a href="https://precursorearth.github.io/precursor-site/precursor_company.html">Team & Track Record</a>
+      <a href="https://precursorearth.github.io/precursor-site/precursor_solutions.html">Solutions</a>
+      <a href="https://precursorearth.github.io/precursor-site/precursor_thought_leadership.html">Insights & News</a>
+      <a href="https://precursorearth.github.io/precursor-site/precursor_contact.html">Contact</a>
+    </div>
+    <p class="f-legal">Securities offered through <a href="https://www.pickwickcapitalpartners.com/form-crs.html" target="_blank" rel="noopener" style="color:inherit;border-bottom:0.5px solid rgba(232,228,218,0.3);text-decoration:none">Pickwick Capital Partners LLC</a>, an SEC registered broker dealer member <a href="https://brokercheck.finra.org/" target="_blank" rel="noopener" style="color:inherit;border-bottom:0.5px solid rgba(232,228,218,0.3);text-decoration:none">FINRA</a> &amp; <a href="https://www.sipc.org" target="_blank" rel="noopener" style="color:inherit;border-bottom:0.5px solid rgba(232,228,218,0.3);text-decoration:none">SIPC</a>.</p>
+  </div>
 </footer>
 
 <script>
