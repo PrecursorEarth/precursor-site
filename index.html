@@ -100,6 +100,9 @@
   .hero-bg {
     position: absolute;
     inset: 0;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
   }
   .hero-bg svg { width: 100%; height: 100%; }
   .hero-overlay {
@@ -242,6 +245,15 @@
     color: var(--cream-dim);
     line-height: 1.55;
   }
+
+  /* ── SOCIAL PROOF ── */
+  .proof-band { background: var(--dark2); border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); padding: 48px; }
+  .proof-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 0; }
+  .proof-item { flex: 1; text-align: center; }
+  .proof-num { font-size: clamp(32px, 4vw, 52px); font-weight: 300; letter-spacing: -0.03em; color: var(--cream); line-height: 1; margin-bottom: 8px; }
+  .proof-num span { color: var(--cyan); }
+  .proof-label { font-size: 12px; color: var(--cream-dim); line-height: 1.55; }
+  .proof-divider { width: 0.5px; height: 60px; background: var(--border); flex-shrink: 0; }
 
   /* ── CHALLENGE ── */
   .challenge {
@@ -540,7 +552,7 @@
   }
 
   /* ── RESPONSIVE ── */
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     nav { padding: 16px 20px; }
     .nav-links { display: none; }
     .nav-links.open {
@@ -549,10 +561,11 @@
       position: absolute;
       top: 100%; left: 0; right: 0;
       background: rgba(5,8,10,0.97);
-      padding: 20px;
-      gap: 16px;
+      padding: 20px 24px;
+      gap: 18px;
       border-bottom: 0.5px solid var(--border);
     }
+    .nav-links.open a { font-size: 13px; }
     .nav-toggle { display: flex; }
 
     .hero { padding-bottom: 60px; }
@@ -564,6 +577,10 @@
     .stat { border-right: none; border-bottom: 0.5px solid var(--border); padding: 28px 20px; }
     .stat:last-child { border-bottom: none; }
 
+    .proof-band { padding: 40px 20px; }
+    .proof-inner { flex-wrap: wrap; gap: 32px; }
+    .proof-item { flex: 1; min-width: 120px; }
+    .proof-divider { display: none; }
     .challenge { grid-template-columns: 1fr; gap: 32px; padding: 60px 20px; }
 
     .truths { grid-template-columns: 1fr 1fr; }
@@ -613,227 +630,7 @@
 
 <!-- ── HERO ── -->
 <section class="hero" id="about">
-  <div class="hero-bg" aria-hidden="true">
-    <svg viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#03080e"/>
-          <stop offset="55%" stop-color="#060d14"/>
-          <stop offset="100%" stop-color="#0c0d08"/>
-        </linearGradient>
-        <radialGradient id="launch-glow" cx="65%" cy="98%" r="42%">
-          <stop offset="0%" stop-color="#00AADF" stop-opacity="0.7"/>
-          <stop offset="22%" stop-color="#0077aa" stop-opacity="0.45"/>
-          <stop offset="55%" stop-color="#003d55" stop-opacity="0.2"/>
-          <stop offset="100%" stop-color="#03080e" stop-opacity="0"/>
-        </radialGradient>
-        <radialGradient id="launch-glow2" cx="65%" cy="100%" r="65%">
-          <stop offset="0%" stop-color="#2DD4A0" stop-opacity="0.18"/>
-          <stop offset="100%" stop-color="#03080e" stop-opacity="0"/>
-        </radialGradient>
-        <!-- Right side warm upper atmosphere -->
-        <radialGradient id="upper-warm" cx="88%" cy="15%" r="35%">
-          <stop offset="0%" stop-color="#00AADF" stop-opacity="0.2"/>
-          <stop offset="100%" stop-color="#03080e" stop-opacity="0"/>
-        </radialGradient>
-        <!-- Right side deep blue-teal fill -->
-        <radialGradient id="right-fill" cx="85%" cy="45%" r="45%">
-          <stop offset="0%" stop-color="#061828" stop-opacity="0.7"/>
-          <stop offset="100%" stop-color="#03080e" stop-opacity="0"/>
-        </radialGradient>
-        <linearGradient id="horizon" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#03080e" stop-opacity="0"/>
-          <stop offset="100%" stop-color="#030e14" stop-opacity="1"/>
-        </linearGradient>
-        <linearGradient id="hfade" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#03080e" stop-opacity="0"/>
-          <stop offset="88%" stop-color="#03080e" stop-opacity="1"/>
-        </linearGradient>
-        <filter id="arc-blur-soft" x="-50%" y="-50%" width="200%" height="200%">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="9"/>
-        </filter>
-        <filter id="arc-blur" x="-30%" y="-30%" width="160%" height="160%">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="3.5" result="blur"/>
-          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-        </filter>
-        <filter id="glow-tip" x="-300%" y="-300%" width="700%" height="700%">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur"/>
-          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-        </filter>
-        <filter id="star-glow" x="-400%" y="-400%" width="900%" height="900%">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="2.5"/>
-        </filter>
-        <!-- Hex pattern left-edge fade -->
-        <linearGradient id="hex-fade-l" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stop-color="#03080e" stop-opacity="1"/>
-          <stop offset="100%" stop-color="#03080e" stop-opacity="0"/>
-        </linearGradient>
-      </defs>
-
-      <!-- Night sky base -->
-      <rect width="1400" height="900" fill="url(#sky)"/>
-      <!-- Right side atmospheric fill — gives the empty area depth -->
-      <rect width="1400" height="900" fill="url(#right-fill)"/>
-      <!-- Upper right warm tint -->
-      <rect width="1400" height="900" fill="url(#upper-warm)"/>
-      <!-- Launch glow from bottom -->
-      <rect width="1400" height="900" fill="url(#launch-glow)"/>
-      <rect width="1400" height="900" fill="url(#launch-glow2)"/>
-      <rect width="1400" height="900" fill="url(#horizon)"/>
-
-      <!-- Ground terrain -->
-      <rect x="0" y="830" width="1400" height="70" fill="#07090a"/>
-      <path d="M0 832 Q180 826 320 833 Q480 840 580 828 Q720 815 860 828 Q1020 841 1140 825 Q1280 810 1400 828 L1400 900 L0 900 Z" fill="#050709"/>
-
-      <!-- Launch site glow on ground -->
-      <ellipse cx="910" cy="834" rx="90" ry="14" fill="#00AADF" fill-opacity="0.35"/>
-      <ellipse cx="910" cy="834" rx="160" ry="8" fill="#2DD4A0" fill-opacity="0.15"/>
-
-      <!-- Structural elements right side — gives the empty area content -->
-      <!-- Faint horizon arc lines suggesting curvature of earth -->
-      <path d="M700 900 Q1050 600 1380 200" fill="none" stroke="rgba(200,130,30,0.06)" stroke-width="80" stroke-linecap="round"/>
-      <path d="M800 900 Q1100 650 1390 350" fill="none" stroke="rgba(0,100,160,0.05)" stroke-width="60" stroke-linecap="round"/>
-
-      <!-- Faint orbit / arc lines on right — filling the space -->
-      <path d="M1400 380 Q1200 300 1050 180 Q950 100 920 40"
-        fill="none" stroke="rgba(200,130,32,0.08)" stroke-width="1" stroke-linecap="round"/>
-      <path d="M1400 480 Q1260 400 1150 300 Q1060 220 1020 130"
-        fill="none" stroke="rgba(0,140,200,0.06)" stroke-width="0.5" stroke-linecap="round"/>
-      <path d="M1400 280 Q1220 220 1100 130 Q1020 70 990 20"
-        fill="none" stroke="rgba(200,130,32,0.06)" stroke-width="0.5" stroke-linecap="round"/>
-
-      <!-- Main rocket arc — wide sweeping from lower right to upper center-right -->
-      <!-- Outermost soft glow -->
-      <path d="M910 828 C908 720, 890 600, 868 490 C848 390, 820 300, 790 220 C765 150, 740 96, 718 48"
-
-        stroke-linecap="round" filter="url(#arc-blur-soft)"/>
-      <!-- Mid glow -->
-      <path d="M910 828 C908 720, 890 600, 868 490 C848 390, 820 300, 790 220 C765 150, 740 96, 718 48"
-        fill="none" stroke="#2DD4A0" stroke-width="12" stroke-opacity="0.2"
-        stroke-linecap="round"/>
-      <!-- Inner glow -->
-      <path d="M910 828 C908 720, 890 600, 868 490 C848 390, 820 300, 790 220 C765 150, 740 96, 718 48"
-        fill="none" stroke="#00AADF" stroke-width="5" stroke-opacity="0.5"
-        stroke-linecap="round" filter="url(#arc-blur)"/>
-      <!-- Core bright line -->
-      <path d="M910 828 C908 720, 890 600, 868 490 C848 390, 820 300, 790 220 C765 150, 740 96, 718 48"
-        fill="none" stroke="#7EECD8" stroke-width="1.5" stroke-opacity="0.9"
-        stroke-linecap="round"/>
-
-      <!-- Rocket tip -->
-      <circle cx="718" cy="48" r="12" fill="#00AADF" fill-opacity="0.25" filter="url(#glow-tip)"/>
-      <circle cx="718" cy="48" r="4.5" fill="#2DD4A0" fill-opacity="0.92"/>
-      <circle cx="718" cy="48" r="2" fill="white" fill-opacity="0.98"/>
-
-      <!-- Faint smoke trail -->
-      <path d="M908 832 C906 760, 892 650, 872 545 C854 445, 826 352, 796 268"
-        fill="none" stroke="rgba(160,140,110,0.05)" stroke-width="22" stroke-linecap="round"/>
-
-      <!-- Secondary smaller arc (parallax depth — a previous or future trajectory) -->
-      <path d="M950 828 C946 740, 930 630, 910 530 C892 440, 868 360, 845 288 C826 228, 808 176, 792 130"
-
-        stroke-linecap="round"/>
-
-      <!-- Right side: scattered infrastructure nodes -->
-      <g stroke="rgba(0,170,223,0.1)" stroke-width="0.5" fill="none">
-        <!-- Horizontal data line -->
-        <line x1="1050" y1="420" x2="1320" y2="420"/>
-        <line x1="1180" y1="380" x2="1180" y2="420"/>
-        <line x1="1260" y1="360" x2="1260" y2="420"/>
-        <rect x="1172" y="366" width="16" height="15" rx="2"/>
-        <rect x="1252" y="346" width="16" height="15" rx="2"/>
-        <circle cx="1050" cy="420" r="4"/>
-        <circle cx="1320" cy="420" r="3"/>
-        <!-- Vertical connection -->
-        <line x1="1320" y1="420" x2="1320" y2="520"/>
-        <circle cx="1320" cy="520" r="3"/>
-        <line x1="1320" y1="520" x2="1380" y2="520"/>
-      </g>
-      <g fill="#00AADF" fill-opacity="0.45">
-        <circle cx="1050" cy="420" r="2"/>
-        <circle cx="1320" cy="520" r="2"/>
-      </g>
-
-      <!-- Grid lines -->
-      <g stroke="rgba(0,170,223,0.022)" stroke-width="0.5">
-        <line x1="175" y1="0" x2="175" y2="800"/>
-        <line x1="350" y1="0" x2="350" y2="800"/>
-        <line x1="525" y1="0" x2="525" y2="800"/>
-        <line x1="700" y1="0" x2="700" y2="800"/>
-        <line x1="875" y1="0" x2="875" y2="800"/>
-        <line x1="1050" y1="0" x2="1050" y2="800"/>
-        <line x1="1225" y1="0" x2="1225" y2="800"/>
-        <line x1="0" y1="225" x2="1400" y2="225"/>
-        <line x1="0" y1="450" x2="1400" y2="450"/>
-        <line x1="0" y1="675" x2="1400" y2="675"/>
-      </g>
-
-      <!-- Stars -->
-      <g fill="white">
-        <circle cx="85" cy="62" r="0.9" fill-opacity="0.65"/>
-        <circle cx="180" cy="38" r="1.1" fill-opacity="0.55"/>
-        <circle cx="260" cy="88" r="0.7" fill-opacity="0.7"/>
-        <circle cx="340" cy="44" r="0.8" fill-opacity="0.5"/>
-        <circle cx="430" cy="70" r="1" fill-opacity="0.6"/>
-        <circle cx="510" cy="28" r="0.7" fill-opacity="0.8"/>
-        <circle cx="580" cy="95" r="0.8" fill-opacity="0.5"/>
-        <circle cx="630" cy="52" r="1.1" fill-opacity="0.6"/>
-        <circle cx="1060" cy="78" r="0.7" fill-opacity="0.35"/>
-        <circle cx="1140" cy="30" r="0.9" fill-opacity="0.45"/>
-        <circle cx="1220" cy="55" r="1.1" fill-opacity="0.4"/>
-        <circle cx="1300" cy="88" r="0.7" fill-opacity="0.4"/>
-        <circle cx="1370" cy="42" r="0.8" fill-opacity="0.45"/>
-        <circle cx="120" cy="140" r="0.7" fill-opacity="0.4"/>
-        <circle cx="280" cy="160" r="0.8" fill-opacity="0.4"/>
-      </g>
-      <!-- Amber stars near arc -->
-      <g fill="#2DD4A0">
-        <circle cx="760" cy="20" r="1.3" fill-opacity="0.65"/>
-        <circle cx="840" cy="58" r="0.9" fill-opacity="0.45"/>
-        <circle cx="940" cy="22" r="1.1" fill-opacity="0.55"/>
-      </g>
-      <circle cx="760" cy="20" r="4" fill="#00AADF" fill-opacity="0.15" filter="url(#star-glow)"/>
-      <circle cx="940" cy="22" r="3" fill="#2DD4A0" fill-opacity="0.12" filter="url(#star-glow)"/>
-
-      <!-- Right side: concentric arc pattern fading left -->
-      <clipPath id="right-clip">
-        <rect x="600" y="0" width="800" height="900"/>
-      </clipPath>
-      <g clip-path="url(#right-clip)">
-
-        <!-- PRIMARY SET: centered at x=1300, y=450 — pushed further left -->
-        <!-- Cyan arcs -->
-        <circle cx="1300" cy="450" r="160" fill="none" stroke="#00AADF" stroke-width="1.2" stroke-opacity="0.70"/>
-        <circle cx="1300" cy="450" r="240" fill="none" stroke="#00AADF" stroke-width="1.0" stroke-opacity="0.60"/>
-        <circle cx="1300" cy="450" r="320" fill="none" stroke="#00AADF" stroke-width="0.9" stroke-opacity="0.50"/>
-        <!-- Mint/green arcs interspersed -->
-        <circle cx="1300" cy="450" r="290" fill="none" stroke="#2DD4A0" stroke-width="0.7" stroke-opacity="0.35"/>
-        <circle cx="1300" cy="450" r="400" fill="none" stroke="#2DD4A0" stroke-width="0.8" stroke-opacity="0.28"/>
-        <!-- Cyan continues fading -->
-        <circle cx="1300" cy="450" r="480" fill="none" stroke="#00AADF" stroke-width="0.7" stroke-opacity="0.30"/>
-        <circle cx="1300" cy="450" r="560" fill="none" stroke="#00AADF" stroke-width="0.6" stroke-opacity="0.18"/>
-        <!-- Amber accent arc -->
-
-        <!-- Outer fade -->
-        <circle cx="1300" cy="450" r="640" fill="none" stroke="#00AADF" stroke-width="0.5" stroke-opacity="0.10"/>
-        <circle cx="1300" cy="450" r="720" fill="none" stroke="#2DD4A0" stroke-width="0.5" stroke-opacity="0.07"/>
-        <circle cx="1300" cy="450" r="800" fill="none" stroke="#00AADF" stroke-width="0.5" stroke-opacity="0.04"/>
-
-        <!-- SECONDARY SET: upper area, x=1250 y=80 -->
-        <circle cx="1250" cy="80" r="180" fill="none" stroke="#2DD4A0" stroke-width="0.8" stroke-opacity="0.38"/>
-        <circle cx="1250" cy="80" r="300" fill="none" stroke="#00AADF" stroke-width="0.7" stroke-opacity="0.28"/>
-
-        <circle cx="1250" cy="80" r="540" fill="none" stroke="#2DD4A0" stroke-width="0.5" stroke-opacity="0.10"/>
-        <circle cx="1250" cy="80" r="660" fill="none" stroke="#00AADF" stroke-width="0.5" stroke-opacity="0.06"/>
-
-      </g>
-      <!-- Fade mask: dissolve left edge of arc zone -->
-      <rect x="600" y="0" width="300" height="900" fill="url(#hex-fade-l)"/>
-
-            <!-- Bottom fade -->
-      <rect width="1400" height="900" fill="url(#hfade)"/>
-    </svg>
-  </div>
+  <div class="hero-bg" aria-hidden="true" style="background:url('https://precursorearth.github.io/precursor-site/rocket.jpg') center center/cover no-repeat;"></div>
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="hero-overlay-btm" aria-hidden="true"></div>
 
@@ -848,6 +645,31 @@
 </section>
 
 
+
+<!-- ── SOCIAL PROOF ── -->
+<div class="proof-band">
+  <div class="proof-inner">
+    <div class="proof-item">
+      <div class="proof-num">$50<span>B+</span></div>
+      <div class="proof-label">Deployed across<br>revolutionary projects</div>
+    </div>
+    <div class="proof-divider"></div>
+    <div class="proof-item">
+      <div class="proof-num">120<span>+</span></div>
+      <div class="proof-label">Years of collective<br>FOAK experience</div>
+    </div>
+    <div class="proof-divider"></div>
+    <div class="proof-item">
+      <div class="proof-num">$100<span>M+</span></div>
+      <div class="proof-label">In FOAK capital<br>raised since launch</div>
+    </div>
+    <div class="proof-divider"></div>
+    <div class="proof-item">
+      <div class="proof-num">60<span>K+</span></div>
+      <div class="proof-label">Reads on CTVC<br>FOAK 101 series</div>
+    </div>
+  </div>
+</div>
 
 <!-- ── CHALLENGE ── -->
 <div class="challenge">
