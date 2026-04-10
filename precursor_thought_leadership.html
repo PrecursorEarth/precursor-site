@@ -24,6 +24,19 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 .page-hero p{font-size:15px;color:var(--cream-dim);line-height:1.75;max-width:640px}
 .page-hero p+p{margin-top:10px}
 
+/* LOGO SCROLL */
+.logo-scroll-band{border-bottom:0.5px solid var(--border);padding:32px 0;overflow:hidden;position:relative;background:var(--dark)}
+.logo-scroll-band::before,.logo-scroll-band::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}
+.logo-scroll-band::before{left:0;background:linear-gradient(to right,var(--dark),transparent)}
+.logo-scroll-band::after{right:0;background:linear-gradient(to left,var(--dark),transparent)}
+.logo-scroll-label{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--cyan);opacity:0.6;text-align:center;margin-bottom:24px}
+.logo-track{display:flex;gap:64px;align-items:center;width:max-content;animation:scroll-logos 28s linear infinite}
+.logo-track:hover{animation-play-state:paused}
+@keyframes scroll-logos{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.logo-track img{height:28px;width:auto;max-width:120px;object-fit:contain;opacity:0.55;transition:opacity 0.2s;filter:brightness(0) invert(1)}
+.logo-track img.logo-colored{filter:none;opacity:0.5}
+.logo-track img:hover{opacity:0.9}
+
 /* ARTICLES GRID */
 .articles-section{padding:72px 48px;max-width:1200px;margin:0 auto}
 .section-tag{font-size:10px;letter-spacing:0.17em;text-transform:uppercase;color:var(--cyan);margin-bottom:28px;display:flex;align-items:center;gap:10px}
@@ -110,6 +123,29 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
     <h1>Featured articles, podcasts,<br>and interviews</h1>
     <p>Precursor's thought leadership helped launch the FOAK market.</p>
     <p>Part of our mission is to open source best practices, lessons learned, and solutions for FOAK.</p>
+  </div>
+</div>
+
+<!-- LOGO SCROLL -->
+<div class="logo-scroll-band">
+  <div class="logo-scroll-label">As featured in</div>
+  <div class="logo-track">
+      <img src="https://precursorearth.github.io/precursor-site/logo-linkedin.png" alt="LinkedIn" class=""/>
+      <img src="https://precursorearth.github.io/precursor-site/logo-wsj.png" alt="Wall Street Journal" class="logo-colored"/>
+      <img src="https://precursorearth.github.io/precursor-site/logo-ctvc.svg" alt="CTVC" class=""/>
+      <img src="https://precursorearth.github.io/precursor-site/logo-latitude.png" alt="Latitude Media" class=""/>
+      <img src="https://precursorearth.github.io/precursor-site/logo-oggn.png" alt="OGGN" class=""/>
+      <img src="https://precursorearth.github.io/precursor-site/logo-decarb.png" alt="Decarb Connect" class="logo-colored"/>
+      <img src="https://precursorearth.github.io/precursor-site/logo-occam.png" alt="Occam Edge" class=""/>
+      <img src="https://precursorearth.github.io/precursor-site/logo-terra.jpg" alt="Terra Alpha" class=""/>
+      <img src="https://precursorearth.github.io/precursor-site/logo-linkedin.png" alt="LinkedIn" class=""/>
+      <img src="https://precursorearth.github.io/precursor-site/logo-wsj.png" alt="Wall Street Journal" class="logo-colored"/>
+      <img src="https://precursorearth.github.io/precursor-site/logo-ctvc.svg" alt="CTVC" class=""/>
+      <img src="https://precursorearth.github.io/precursor-site/logo-latitude.png" alt="Latitude Media" class=""/>
+      <img src="https://precursorearth.github.io/precursor-site/logo-oggn.png" alt="OGGN" class=""/>
+      <img src="https://precursorearth.github.io/precursor-site/logo-decarb.png" alt="Decarb Connect" class="logo-colored"/>
+      <img src="https://precursorearth.github.io/precursor-site/logo-occam.png" alt="Occam Edge" class=""/>
+      <img src="https://precursorearth.github.io/precursor-site/logo-terra.jpg" alt="Terra Alpha" class=""/>
   </div>
 </div>
 
