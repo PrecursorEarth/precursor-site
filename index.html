@@ -523,6 +523,17 @@
     margin-right: auto;
   }
 
+  /* ── TESTIMONIAL ── */
+  .testimonial-band { padding: 96px 48px; background: var(--dark2); border-top: 0.5px solid var(--border); position: relative; overflow: hidden; }
+  .testimonial-inner { max-width: 860px; margin: 0 auto; text-align: center; position: relative; z-index: 2; }
+  .testimonial-quote { font-size: clamp(18px, 2.2vw, 26px); font-weight: 400; font-style: italic; line-height: 1.55; letter-spacing: -0.01em; color: var(--cream); margin-bottom: 32px; }
+  .testimonial-quote::before { content: '\201C'; color: var(--cyan); opacity: 0.5; font-size: 1.2em; font-style: normal; }
+  .testimonial-quote::after { content: '\201D'; color: var(--cyan); opacity: 0.5; font-size: 1.2em; font-style: normal; }
+  .testimonial-author { display: flex; align-items: center; justify-content: center; gap: 14px; }
+  .testimonial-divider { width: 24px; height: 0.5px; background: var(--cyan); opacity: 0.5; }
+  .testimonial-name { font-size: 13px; font-weight: 400; color: var(--cream); }
+  .testimonial-role { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--cyan); opacity: 0.7; }
+
   /* ── FOOTER ── */
   footer {
     border-top: 0.5px solid var(--border);
@@ -595,6 +606,7 @@
 
     .cta-content { padding: 60px 20px; }
 
+    .testimonial-band { padding: 60px 20px; }
     footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
   }
 
@@ -671,14 +683,24 @@
   </div>
 </div>
 
-<!-- ── CHALLENGE ── -->
-<div class="challenge">
-  <div class="challenge-left">
-    <div class="section-tag">Our platform</div>
-    <h2>Access the deepest bench in FOAK.</h2>
-  </div>
-  <div class="challenge-right">
-    <p>Access the deepest bench of capital markets, project finance & development, government and strategic partnerships, & FOAK strategy experts.</p>
+<!-- ── TESTIMONIAL ── -->
+<div class="testimonial-band" style="border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);">
+  <svg aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:0.05" viewBox="0 0 1400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="700" cy="350" r="200" fill="none" stroke="#00AADF" stroke-width="0.5"/>
+    <circle cx="700" cy="350" r="300" fill="none" stroke="#2DD4A0" stroke-width="0.5"/>
+    <circle cx="700" cy="350" r="400" fill="none" stroke="#00AADF" stroke-width="0.5"/>
+    <circle cx="700" cy="350" r="500" fill="none" stroke="#2DD4A0" stroke-width="0.5"/>
+  </svg>
+  <div class="testimonial-inner">
+    <p class="testimonial-quote">Scaling first-of-a-kind projects isn't just about innovation—it's about execution and having the right partners. David and the team at Precursor bring what matters most to companies like ours: real experience in taking projects from pilot to commercial success. As we expand industrial-scale lithium-ion battery recycling, we value Precursor as a trusted advisor in navigating the complexities of scaling technologies.</p>
+    <div class="testimonial-author">
+      <div class="testimonial-divider"></div>
+      <div>
+        <div class="testimonial-name">David Fauvre</div>
+        <div class="testimonial-role">Co-Founder, Blue Whale Materials</div>
+      </div>
+      <div class="testimonial-divider"></div>
+    </div>
   </div>
 </div>
 
@@ -709,6 +731,7 @@
     </div>
   </div>
 </section>
+
 
 
 
