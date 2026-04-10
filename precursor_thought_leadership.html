@@ -24,17 +24,31 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 .page-hero p{font-size:15px;color:var(--cream-dim);line-height:1.75;max-width:640px}
 .page-hero p+p{margin-top:10px}
 
+/* LOGO BAND */
 /* LOGO SCROLL */
-.logo-scroll-band{border-bottom:0.5px solid var(--border);padding:32px 0;overflow:hidden;position:relative;background:var(--dark)}
+.logo-scroll-band{border-bottom:0.5px solid var(--border);padding:36px 0;overflow:hidden;position:relative;background:var(--dark)}
 .logo-scroll-band::before,.logo-scroll-band::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}
 .logo-scroll-band::before{left:0;background:linear-gradient(to right,var(--dark),transparent)}
 .logo-scroll-band::after{right:0;background:linear-gradient(to left,var(--dark),transparent)}
 .logo-scroll-label{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--cyan);opacity:0.6;text-align:center;margin-bottom:24px}
-.logo-track{display:flex;gap:64px;align-items:center;width:max-content;animation:scroll-logos 28s linear infinite}
+.logo-track{display:flex;gap:72px;align-items:center;width:max-content;animation:scroll-logos 30s linear infinite}
 .logo-track:hover{animation-play-state:paused}
 @keyframes scroll-logos{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.logo-track img{height:40px;width:auto;max-width:160px;object-fit:contain;opacity:0.75;transition:opacity 0.2s}
+.logo-track img{height:36px;width:auto;object-fit:contain;opacity:0.7;transition:opacity 0.2s;flex-shrink:0}
 .logo-track img:hover{opacity:1}
+.logo-linkedin{height:36px;width:36px !important}
+.logo-wsj-img{height:40px}
+.logo-ctvc-img{height:36px;width:36px !important}
+.logo-decarb-img{height:28px}
+.logo-occam-img{height:32px}
+.logo-oggn-img{height:36px}
+.logo-terra-img{height:36px;width:36px !important}
+.logo-latitude-img{height:32px;border-radius:3px}
+
+
+.logo-item:hover{opacity:1}
+
+
 
 /* ARTICLES GRID */
 .articles-section{padding:72px 48px;max-width:1200px;margin:0 auto}
@@ -125,27 +139,28 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
   </div>
 </div>
 
-<!-- LOGO SCROLL -->
+<!-- LOGO BAND -->
 <div class="logo-scroll-band">
   <div class="logo-scroll-label">As featured in</div>
   <div class="logo-track">
-      <img src="https://precursorearth.github.io/precursor-site/logo-linkedin.png" alt="LinkedIn"/>
-      <img src="https://precursorearth.github.io/precursor-site/logo-wsj.png" alt="Wall Street Journal"/>
-      <img src="https://precursorearth.github.io/precursor-site/logo-ctvc.svg" alt="CTVC"/>
-      <img src="https://precursorearth.github.io/precursor-site/logo-latitude.png" alt="Latitude Media"/>
-      <img src="https://precursorearth.github.io/precursor-site/logo-oggn.png" alt="OGGN"/>
-      <img src="https://precursorearth.github.io/precursor-site/logo-decarb.png" alt="Decarb Connect"/>
-      <img src="https://precursorearth.github.io/precursor-site/logo-occam.png" alt="Occam Edge"/>
-      <img src="https://precursorearth.github.io/precursor-site/logo-terra.png" alt="Terra Alpha"/>
-      <img src="https://precursorearth.github.io/precursor-site/logo-linkedin.png" alt="LinkedIn"/>
-      <img src="https://precursorearth.github.io/precursor-site/logo-wsj.png" alt="Wall Street Journal"/>
-      <img src="https://precursorearth.github.io/precursor-site/logo-ctvc.svg" alt="CTVC"/>
-      <img src="https://precursorearth.github.io/precursor-site/logo-latitude.png" alt="Latitude Media"/>
-      <img src="https://precursorearth.github.io/precursor-site/logo-oggn.png" alt="OGGN"/>
-      <img src="https://precursorearth.github.io/precursor-site/logo-decarb.png" alt="Decarb Connect"/>
-      <img src="https://precursorearth.github.io/precursor-site/logo-occam.png" alt="Occam Edge"/>
-      <img src="https://precursorearth.github.io/precursor-site/logo-terra.png" alt="Terra Alpha"/>
+      <img src="https://precursorearth.github.io/precursor-site/logo-linkedin.png" alt="LinkedIn" class="logo-linkedin"/>
+      <img src="https://precursorearth.github.io/precursor-site/logo-wsj.png" alt="Wall Street Journal" class="logo-wsj-img"/>
+      <img src="https://precursorearth.github.io/precursor-site/logo-ctvc.svg" alt="CTVC" class="logo-ctvc-img"/>
+      <img src="https://precursorearth.github.io/precursor-site/logo-latitude.png" alt="Latitude Media" class="logo-latitude-img"/>
+      <img src="https://precursorearth.github.io/precursor-site/logo-decarb.png" alt="Decarb Connect" class="logo-decarb-img"/>
+      <img src="https://precursorearth.github.io/precursor-site/logo-oggn.png" alt="OGGN" class="logo-oggn-img"/>
+      <img src="https://precursorearth.github.io/precursor-site/logo-occam.png" alt="Occam Edge" class="logo-occam-img"/>
+      <img src="https://precursorearth.github.io/precursor-site/logo-terra.png" alt="Terra Alpha" class="logo-terra-img"/>
+      <img src="https://precursorearth.github.io/precursor-site/logo-linkedin.png" alt="LinkedIn" class="logo-linkedin"/>
+      <img src="https://precursorearth.github.io/precursor-site/logo-wsj.png" alt="Wall Street Journal" class="logo-wsj-img"/>
+      <img src="https://precursorearth.github.io/precursor-site/logo-ctvc.svg" alt="CTVC" class="logo-ctvc-img"/>
+      <img src="https://precursorearth.github.io/precursor-site/logo-latitude.png" alt="Latitude Media" class="logo-latitude-img"/>
+      <img src="https://precursorearth.github.io/precursor-site/logo-decarb.png" alt="Decarb Connect" class="logo-decarb-img"/>
+      <img src="https://precursorearth.github.io/precursor-site/logo-oggn.png" alt="OGGN" class="logo-oggn-img"/>
+      <img src="https://precursorearth.github.io/precursor-site/logo-occam.png" alt="Occam Edge" class="logo-occam-img"/>
+      <img src="https://precursorearth.github.io/precursor-site/logo-terra.png" alt="Terra Alpha" class="logo-terra-img"/>
   </div>
+</div>
 </div>
 
 <!-- ARTICLES -->
