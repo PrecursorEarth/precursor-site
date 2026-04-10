@@ -28,14 +28,19 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 
 /* VALUE PROP */
 .value-band{background:var(--dark2);border-bottom:0.5px solid var(--border);padding:72px 48px}
-.value-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
-.value-left h2{font-size:clamp(22px,2.8vw,34px);font-weight:400;letter-spacing:-0.018em;color:var(--cream);line-height:1.25;margin-bottom:16px}
-.value-left p{font-size:14px;color:var(--cream-dim);line-height:1.78}
-.value-left p+p{margin-top:12px}
-.value-right{display:flex;flex-direction:column;gap:0;border:0.5px solid var(--border)}
-.value-item{padding:20px 24px;border-bottom:0.5px solid var(--border);display:flex;align-items:flex-start;gap:16px}
-.value-item:last-child{border-bottom:none}
-.value-dot{width:6px;height:6px;background:var(--cyan);border-radius:50%;flex-shrink:0;margin-top:6px;opacity:0.7}
+.value-inner{max-width:1200px;margin:0 auto}
+.value-header{margin-bottom:56px}
+.value-header h2{font-size:clamp(22px,2.8vw,34px);font-weight:400;letter-spacing:-0.018em;color:var(--cream);line-height:1.25;margin-bottom:10px}
+.value-header p{font-size:14px;color:var(--cream-dim);line-height:1.7}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);position:relative}
+.timeline::before{content:'';position:absolute;top:20px;left:12.5%;right:12.5%;height:0.5px;background:linear-gradient(to right,#00AADF,#2DD4A0,#00AADF);opacity:0.35}
+.tl-item{padding:0 20px;padding-top:52px;position:relative}
+.tl-dot{width:10px;height:10px;border-radius:50%;background:var(--cyan);position:absolute;top:16px;left:50%;transform:translateX(-50%);flex-shrink:0}
+.tl-dot.mint{background:#2DD4A0}
+.tl-stage{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--cyan);margin-bottom:10px;opacity:0.75}
+.tl-stage.mint{color:#2DD4A0}
+.tl-title{font-size:15px;color:var(--cream);font-weight:400;margin-bottom:8px;line-height:1.3}
+.tl-desc{font-size:13px;color:var(--cream-dim);line-height:1.6}
 .value-text{font-size:13px;color:var(--cream-dim);line-height:1.65}
 
 /* SERVICES */
@@ -70,7 +75,7 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
   .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(5,8,10,0.97);padding:20px;gap:16px;border-bottom:0.5px solid var(--border)}
   .nav-toggle{display:flex}
   .page-hero{padding:70px 20px 50px}
-  .value-band{padding:50px 20px}.value-inner{grid-template-columns:1fr;gap:40px}
+  .value-band{padding:50px 20px}.timeline{grid-template-columns:1fr 1fr;gap:32px}.timeline::before{display:none}
   .services{padding:50px 20px}.services-grid{grid-template-columns:1fr}
   .cta-band{padding:60px 20px}
   footer{padding:24px 20px;flex-direction:column;align-items:flex-start}
@@ -99,8 +104,8 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
 
 <!-- PAGE HERO -->
 <div class="page-hero">
-  <div style="position:absolute;inset:0;pointer-events:none;background:url('https://precursorearth.github.io/precursor-site/arbor-combustion.jpg') center center/cover no-repeat;" aria-hidden="true"></div>
-  <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(to right,rgba(5,8,10,0.92) 40%,rgba(5,8,10,0.5) 100%);" aria-hidden="true"></div>
+  <div style="position:absolute;inset:0;pointer-events:none;background:url('https://precursorearth.github.io/precursor-site/arbor-combustion.jpg') 75% center/70% auto no-repeat;" aria-hidden="true"></div>
+  <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(to right,rgba(5,8,10,1) 45%,rgba(5,8,10,0.6) 70%,rgba(5,8,10,0.4) 100%);" aria-hidden="true"></div>
   <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto">
     <div class="page-eyebrow">Solutions</div>
     <h1>Precursor's Solutions</h1>
@@ -111,19 +116,36 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
 <!-- VALUE PROPOSITION -->
 <div class="value-band">
   <div class="value-inner">
-    <div class="value-left">
+    <div class="value-header">
       <div class="section-tag">Value proposition</div>
       <h2>We are your long-term partner to be the next Tesla</h2>
-      <p>From pilot to your first projects to mass deployment.</p>
-      <p>"Teach how to fish" model: execution partner and mentor to start.</p>
-      <p>Advisor as your infrastructure expertise matures.</p>
+      <p>From pilot through mass deployment — every stage of your FOAK journey.</p>
     </div>
-    <div class="value-right">
-      <div class="value-item"><div class="value-dot"></div><div class="value-text">Long-term partnership from pilot through mass deployment</div></div>
-      <div class="value-item"><div class="value-dot"></div><div class="value-text">Execution partner and mentor at the start</div></div>
-      <div class="value-item"><div class="value-dot"></div><div class="value-text">Advisory role as your infrastructure expertise matures</div></div>
-      <div class="value-item"><div class="value-dot"></div><div class="value-text">$30B+ in FOAK project value advised and developed</div></div>
-      <div class="value-item"><div class="value-dot"></div><div class="value-text">Deepest bench in capital markets, project finance, and FOAK strategy</div></div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-stage">Stage 1</div>
+        <div class="tl-title">Pilot & Demo</div>
+        <div class="tl-desc">FOAK diagnostic, strategy & critical path definition from demo to first project.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot mint"></div>
+        <div class="tl-stage mint">Stage 2</div>
+        <div class="tl-title">First Project</div>
+        <div class="tl-desc">Execution partner — offtakes, financing, EPC sourcing, FID through COD.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-stage">Stage 3</div>
+        <div class="tl-title">Commercial Scale</div>
+        <div class="tl-desc">Strategic advisor as in-house expertise matures and capital markets access deepens.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot mint"></div>
+        <div class="tl-stage mint">Stage 4</div>
+        <div class="tl-title">Mass Deployment</div>
+        <div class="tl-desc">Long-term partner — the next Tesla of your industry, at scale.</div>
+      </div>
     </div>
   </div>
 </div>
