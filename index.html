@@ -533,6 +533,13 @@
   .testimonial-divider { width: 24px; height: 0.5px; background: var(--cyan); opacity: 0.5; }
   .testimonial-name { font-size: 13px; font-weight: 400; color: var(--cream); }
   .testimonial-role { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--cyan); opacity: 0.7; }
+  .testimonial-slides { position: relative; }
+  .testimonial-slide { display: none; }
+  .testimonial-slide.active { display: block; }
+  .testimonial-dots { display: flex; justify-content: center; gap: 10px; margin-top: 32px; }
+  .t-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(0,170,223,0.25); border: none; cursor: pointer; padding: 0; transition: background 0.2s; }
+  .t-dot.active { background: var(--cyan); }
+  .t-dot:hover { background: rgba(0,170,223,0.6); }
 
   /* ── FOOTER ── */
   footer {
@@ -683,7 +690,7 @@
   </div>
 </div>
 
-<!-- ── TESTIMONIAL ── -->
+<!-- ── TESTIMONIALS ── -->
 <div class="testimonial-band" style="border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);">
   <svg aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:0.05" viewBox="0 0 1400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
     <circle cx="700" cy="350" r="200" fill="none" stroke="#00AADF" stroke-width="0.5"/>
@@ -692,45 +699,54 @@
     <circle cx="700" cy="350" r="500" fill="none" stroke="#2DD4A0" stroke-width="0.5"/>
   </svg>
   <div class="testimonial-inner">
-    <p class="testimonial-quote">Scaling first-of-a-kind projects isn't just about innovation—it's about execution and having the right partners. David and the team at Precursor bring what matters most to companies like ours: real experience in taking projects from pilot to commercial success. As we expand industrial-scale lithium-ion battery recycling, we value Precursor as a trusted advisor in navigating the complexities of scaling technologies.</p>
-    <div class="testimonial-author">
-      <div class="testimonial-divider"></div>
-      <div>
-        <div class="testimonial-name">David Fauvre</div>
-        <div class="testimonial-role">Co-Founder, Blue Whale Materials</div>
+    <div class="testimonial-slides">
+      <!-- Slide 1 — Arbor Energy -->
+      <div class="testimonial-slide active">
+        <p class="testimonial-quote">What sets Precursor apart is their ability to be a comprehensive "Chief FOAK Officer/Partner" — they can discuss oxycombustion turbines with our engineers in the morning, term sheets with investors in the afternoon, and PPAs with hyperscalers at night. That fluency was essential in structuring our successful $55 million Series A and positioning us for large-scale capital in the future.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-divider"></div>
+          <div>
+            <div class="testimonial-name">Brad Hartwig</div>
+            <div class="testimonial-role">CEO & Co-Founder, Arbor Energy</div>
+          </div>
+          <div class="testimonial-divider"></div>
+        </div>
       </div>
-      <div class="testimonial-divider"></div>
+      <!-- Slide 2 — Blue Whale -->
+      <div class="testimonial-slide">
+        <p class="testimonial-quote">Scaling first-of-a-kind projects isn't just about innovation—it's about execution and having the right partners. David and the team at Precursor bring what matters most to companies like ours: real experience in taking projects from pilot to commercial success. As we expand industrial-scale lithium-ion battery recycling, we value Precursor as a trusted advisor in navigating the complexities of scaling technologies.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-divider"></div>
+          <div>
+            <div class="testimonial-name">David Fauvre</div>
+            <div class="testimonial-role">Co-Founder, Blue Whale Materials</div>
+          </div>
+          <div class="testimonial-divider"></div>
+        </div>
+      </div>
+      <!-- Slide 3 — Exterra -->
+      <div class="testimonial-slide">
+        <p class="testimonial-quote">For critical mineral technology projects, the path to bankability and raising tens if not hundreds of millions of dollars requires veteran pattern recognition of what works and what does not. Precursor has acquired this from operating at the nexus of FOAK transactions and its team's 120+ years of experience — and helped us craft appropriate-to-the-time narrative and strategy that many others miss.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-divider"></div>
+          <div>
+            <div class="testimonial-name">Olivier Dufresne</div>
+            <div class="testimonial-role">CEO, Exterra Technologies</div>
+          </div>
+          <div class="testimonial-divider"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Dots navigation -->
+    <div class="testimonial-dots">
+      <button class="t-dot active" onclick="showTestimonial(0)" aria-label="Testimonial 1"></button>
+      <button class="t-dot" onclick="showTestimonial(1)" aria-label="Testimonial 2"></button>
+      <button class="t-dot" onclick="showTestimonial(2)" aria-label="Testimonial 3"></button>
     </div>
   </div>
 </div>
 
-<!-- ── SOLUTIONS ── -->
 
-
-<!-- ── SOLUTIONS ── -->
-<section class="solutions" id="solutions">
-
-  <div class="solutions-grid">
-    <div class="sol-card">
-      <div class="sol-num">Advisory</div>
-      <h3>FOAK Strategy & Advisory</h3>
-      <p>Expert guidance on project structuring, stakeholder navigation, and the strategic choices that determine whether a first project succeeds.</p>
-
-    </div>
-    <div class="sol-card">
-      <div class="sol-num">Development</div>
-      <h3>Project Development Platform</h3>
-      <p>Hands-on partnership through the full development lifecycle — from concept to commercial operation of your first project.</p>
-
-    </div>
-    <div class="sol-card">
-      <div class="sol-num">Investment</div>
-      <h3>Government & Strategic Partnerships</h3>
-      <p>Access to the deepest bench of government relationships, strategic partners, and capital market connections in the FOAK space.</p>
-
-    </div>
-  </div>
-</section>
 
 
 
@@ -792,6 +808,10 @@
 </footer>
 
 <script>
+  function showTestimonial(n) {
+    document.querySelectorAll('.testimonial-slide').forEach((s,i) => s.classList.toggle('active', i===n));
+    document.querySelectorAll('.t-dot').forEach((d,i) => d.classList.toggle('active', i===n));
+  }
   const toggle = document.getElementById('nav-toggle');
   const links = document.getElementById('nav-links');
   if (toggle && links) {
