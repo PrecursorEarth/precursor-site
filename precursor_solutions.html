@@ -104,8 +104,13 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
 
 <!-- PAGE HERO -->
 <div class="page-hero">
-  <div style="position:absolute;inset:0;pointer-events:none;background:url('https://precursorearth.github.io/precursor-site/arbor-combustion.jpg') 75% center/70% auto no-repeat;" aria-hidden="true"></div>
-  <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(to right,rgba(5,8,10,1) 45%,rgba(5,8,10,0.6) 70%,rgba(5,8,10,0.4) 100%);" aria-hidden="true"></div>
+  <!-- Split hero: combustion left, turbine right -->
+  <div style="position:absolute;inset:0;pointer-events:none;display:grid;grid-template-columns:1fr 1fr;" aria-hidden="true">
+    <div style="background:url('https://precursorearth.github.io/precursor-site/arbor-combustion.jpg') center center/cover no-repeat;filter:brightness(0.6)"></div>
+    <div style="background:url('https://precursorearth.github.io/precursor-site/arbor-turbine.jpg') center center/cover no-repeat;filter:brightness(0.85)"></div>
+  </div>
+  <!-- Gradient overlays -->
+  <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(to right,rgba(5,8,10,0.92) 0%,rgba(5,8,10,0.55) 40%,rgba(5,8,10,0.35) 60%,rgba(5,8,10,0.6) 100%);" aria-hidden="true"></div>
   <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto">
     <div class="page-eyebrow">Solutions</div>
     <h1>Precursor's Solutions</h1>
