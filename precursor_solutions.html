@@ -21,16 +21,15 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 .section-tag{font-size:10px;letter-spacing:0.17em;text-transform:uppercase;color:var(--cyan);margin-bottom:20px;display:flex;align-items:center;gap:10px}
 .section-tag::before{content:'';width:16px;height:0.5px;background:var(--cyan);display:inline-block;flex-shrink:0}
 
-/* PAGE HERO — CINEMATIC */
-.page-hero{min-height:72vh;border-bottom:0.5px solid var(--border);position:relative;overflow:hidden;display:flex;align-items:flex-end}
-.hero-photo{position:absolute;inset:0;background:url('https://images.squarespace-cdn.com/content/v1/64195c4444fda04226def557/0fd176b1-725a-41a4-be69-1796abea189c/137A8192+copy.jpg') center 30%/cover no-repeat;filter:brightness(0.55) saturate(0.75)}
-.hero-grad-top{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(5,8,10,0.55) 0%,transparent 40%)}
-.hero-grad-btm{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,8,10,1) 0%,rgba(5,8,10,0.7) 30%,transparent 65%)}
-.hero-grad-left{position:absolute;inset:0;background:linear-gradient(to right,rgba(5,8,10,0.88) 0%,rgba(5,8,10,0.4) 55%,transparent 100%)}
-.hero-content{position:relative;z-index:2;padding:0 52px 72px;max-width:780px}
-.page-hero h1{font-size:clamp(42px,6vw,76px);font-weight:400;line-height:1.04;letter-spacing:-0.024em;color:var(--cream);margin-bottom:20px}
-.page-hero h2.sub{font-size:clamp(14px,1.6vw,18px);font-weight:400;color:var(--cream-dim);line-height:1.75;max-width:480px}
-.hero-credit{position:absolute;bottom:20px;right:28px;z-index:2;font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--cyan);opacity:0.45}
+/* PAGE HERO */
+.page-hero{padding:100px 48px 80px;border-bottom:0.5px solid var(--border);position:relative;overflow:hidden}
+.page-hero h1{font-size:clamp(36px,5.5vw,68px);font-weight:400;line-height:1.08;letter-spacing:-0.022em;color:var(--cream);margin-bottom:24px}
+.page-hero h2.sub{font-size:clamp(16px,2vw,22px);font-weight:400;color:var(--cream-dim);line-height:1.5;max-width:740px}
+.hero-photo-right{position:absolute;top:0;right:0;bottom:0;width:55%;pointer-events:none}
+.hero-photo-right img{width:100%;height:100%;object-fit:cover;object-position:center center;opacity:0.18;filter:brightness(0.7) saturate(0.6)}
+.hero-photo-fade{position:absolute;top:0;left:0;bottom:0;width:60%;background:linear-gradient(to right,var(--dark) 40%,transparent 100%);pointer-events:none}
+.hero-photo-fade-top{position:absolute;top:0;left:0;right:0;height:50%;background:linear-gradient(to bottom,var(--dark) 0%,transparent 100%);pointer-events:none}
+.hero-photo-fade-btm{position:absolute;bottom:0;left:0;right:0;height:40%;background:linear-gradient(to top,var(--dark) 0%,transparent 100%);pointer-events:none}
 
 /* VALUE PROP */
 .value-band{background:var(--dark2);border-bottom:0.5px solid var(--border);padding:72px 48px}
@@ -80,7 +79,7 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
   nav{padding:16px 20px}.nav-links{display:none}
   .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(5,8,10,0.97);padding:20px;gap:16px;border-bottom:0.5px solid var(--border)}
   .nav-toggle{display:flex}
-  .page-hero{min-height:55vh}.hero-content{padding:0 20px 52px}
+  .page-hero{padding:70px 20px 50px}
   .value-band{padding:50px 20px}.timeline{grid-template-columns:1fr 1fr;gap:32px}.timeline::before{display:none}
   .services{padding:50px 20px}.services-grid{grid-template-columns:1fr}
   .cta-band{padding:60px 20px}
@@ -110,16 +109,37 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
 
 <!-- PAGE HERO -->
 <div class="page-hero">
-  <div class="hero-photo" aria-hidden="true"></div>
-  <div class="hero-grad-top" aria-hidden="true"></div>
-  <div class="hero-grad-btm" aria-hidden="true"></div>
-  <div class="hero-grad-left" aria-hidden="true"></div>
-  <div class="hero-content">
+  <!-- Same SVG grid as other pages -->
+  <div style="position:absolute;inset:0;pointer-events:none" aria-hidden="true">
+    <svg viewBox="0 0 1400 320" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%">
+      <defs>
+        <radialGradient id="pg1" cx="80%" cy="40%" r="55%">
+          <stop offset="0%" stop-color="#003d5c" stop-opacity="0.5"/>
+          <stop offset="100%" stop-color="#05080a" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="1400" height="320" fill="#05080a"/>
+      <rect width="1400" height="320" fill="url(#pg1)"/>
+      <g stroke="rgba(0,170,223,0.04)" stroke-width="0.5">
+        <line x1="0" y1="80" x2="1400" y2="80"/><line x1="0" y1="160" x2="1400" y2="160"/>
+        <line x1="0" y1="240" x2="1400" y2="240"/>
+        <line x1="350" y1="0" x2="350" y2="320"/><line x1="700" y1="0" x2="700" y2="320"/>
+        <line x1="1050" y1="0" x2="1050" y2="320"/>
+      </g>
+    </svg>
+  </div>
+  <!-- Arbor combustion photo, ghosted right -->
+  <div class="hero-photo-right" aria-hidden="true">
+    <img src="https://precursorearth.github.io/precursor-site/arbor-combustion.jpg" alt=""/>
+    <div class="hero-photo-fade"></div>
+    <div class="hero-photo-fade-top"></div>
+    <div class="hero-photo-fade-btm"></div>
+  </div>
+  <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto">
     <div class="page-eyebrow">Solutions</div>
     <h1>Precursor's Solutions</h1>
     <h2 class="sub">World class expertise in capital markets, project finance & development, as well as government and strategic partnerships.</h2>
   </div>
-  <div class="hero-credit" aria-hidden="true">Arbor Energy · Engineering Lab</div>
 </div>
 
 <!-- VALUE PROPOSITION -->
@@ -201,6 +221,18 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
   </div>
 </div>
 
+<!-- CTA -->
+<div class="cta-band">
+  <svg aria-hidden="true" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:250px;opacity:0.05;pointer-events:none" viewBox="0 0 500 250" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="250" cy="125" rx="240" ry="100" fill="none" stroke="#00AADF" stroke-width="0.5"/>
+    <ellipse cx="250" cy="125" rx="180" ry="72" fill="none" stroke="#00AADF" stroke-width="0.5"/>
+    <line x1="10" y1="125" x2="490" y2="125" stroke="#00AADF" stroke-width="0.5"/>
+    <circle cx="250" cy="125" r="5" fill="#00AADF"/>
+  </svg>
+  <h2>Ready to build<br><em>your first project?</em></h2>
+  <p>Precursor exists so climate companies don't have to face the hardest milestone alone.</p>
+  <a class="btn-cyan" href="https://precursorearth.github.io/precursor-site/precursor_contact.html">Get in touch →</a>
+</div>
 
 <footer style="position:relative;overflow:hidden;">
   <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;">
