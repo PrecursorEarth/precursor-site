@@ -558,10 +558,12 @@
   .testimonial-slides { position: relative; }
   .testimonial-slide { display: none; }
   .testimonial-slide.active { display: block; }
-  .testimonial-dots { display: flex; justify-content: center; gap: 10px; margin-top: 32px; }
+  .testimonial-dots { display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: 32px; }
   .t-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(0,170,223,0.25); border: none; cursor: pointer; padding: 0; transition: background 0.2s; }
   .t-dot.active { background: var(--cyan); }
   .t-dot:hover { background: rgba(0,170,223,0.6); }
+  .t-arrow { width: 36px; height: 36px; border-radius: 50%; background: transparent; border: 0.5px solid var(--cyan-dim); color: var(--cyan); font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.18s, border-color 0.18s; line-height: 1; padding: 0; }
+  .t-arrow:hover { background: var(--cyan-faint); border-color: var(--cyan); }
 
   /* ── FOOTER ── */
   footer {
@@ -782,9 +784,11 @@
     </div>
     <!-- Dots navigation -->
     <div class="testimonial-dots">
+      <button class="t-arrow" onclick="stepTestimonial(-1)" aria-label="Previous">&#8592;</button>
       <button class="t-dot active" onclick="showTestimonial(0)" aria-label="Testimonial 1"></button>
       <button class="t-dot" onclick="showTestimonial(1)" aria-label="Testimonial 2"></button>
       <button class="t-dot" onclick="showTestimonial(2)" aria-label="Testimonial 3"></button>
+      <button class="t-arrow" onclick="stepTestimonial(1)" aria-label="Next">&#8594;</button>
     </div>
   </div>
 </div>
@@ -851,9 +855,15 @@
 </footer>
 
 <script>
+  let tCurrent = 0;
+  const tTotal = document.querySelectorAll('.testimonial-slide').length;
   function showTestimonial(n) {
+    tCurrent = n;
     document.querySelectorAll('.testimonial-slide').forEach((s,i) => s.classList.toggle('active', i===n));
     document.querySelectorAll('.t-dot').forEach((d,i) => d.classList.toggle('active', i===n));
+  }
+  function stepTestimonial(dir) {
+    showTestimonial((tCurrent + dir + tTotal) % tTotal);
   }
   const toggle = document.getElementById('nav-toggle');
   const links = document.getElementById('nav-links');
