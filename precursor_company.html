@@ -58,7 +58,7 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 .advisors-divider{border-top:0.5px solid var(--border);padding-top:60px;margin-top:0}
 .advisors-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:32px;margin-top:32px}
 .advisor-card{background:var(--dark);padding:28px 24px;transition:background 0.18s;cursor:pointer;position:relative}
-.advisor-photo{width:100%;height:200px;object-fit:cover;object-position:center top;margin-bottom:12px;display:block}
+.advisor-photo{width:100%;height:220px;object-fit:cover;object-position:center 15%;margin-bottom:12px;display:block}
 .advisor-card::after{content:'';position:absolute;top:0;left:0;right:0;height:1.5px;background:var(--cyan);transform:scaleX(0);transform-origin:left;transition:transform 0.28s ease}
 .advisor-card{border:0.5px solid var(--border)}
 .advisor-card:hover{background:var(--dark3)}
@@ -103,7 +103,8 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
   .photo-item img{height:280px}
   .team-section{padding:50px 20px}
   .team-grid{grid-template-columns:repeat(2,1fr);gap:24px}
-  .advisors-grid{grid-template-columns:repeat(2,1fr)}
+  .advisors-grid{grid-template-columns:1fr}
+  .advisor-photo{height:260px;object-position:center 20%}
   .track-grid{grid-template-columns:1fr}
   .track-blocks{grid-template-columns:1fr}
   .track-block{padding:28px 20px}
@@ -112,7 +113,8 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
 }
 @media(max-width:480px){
   .team-grid{grid-template-columns:1fr 1fr}
-  .advisors-grid{grid-template-columns:repeat(2,1fr)}
+  .advisors-grid{grid-template-columns:1fr}
+  .advisor-photo{height:260px;object-position:center 20%}
 }
 </style>
 </head>
