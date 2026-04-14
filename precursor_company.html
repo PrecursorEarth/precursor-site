@@ -56,9 +56,9 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 
 /* ADVISORS */
 .advisors-divider{border-top:0.5px solid var(--border);padding-top:60px;margin-top:0}
-.advisors-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:32px;margin-top:32px}
-.advisor-card{background:var(--dark);padding:28px 24px;transition:background 0.18s;cursor:pointer;position:relative}
-.advisor-photo{width:100%;height:220px;object-fit:cover;object-position:center 15%;margin-bottom:12px;display:block}
+.advisors-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:32px}
+.advisor-card{background:var(--dark);padding:20px 18px 22px;transition:background 0.18s;cursor:pointer;position:relative}
+.advisor-photo{width:100%;height:200px;object-fit:cover;object-position:center 15%;margin-bottom:12px;display:block}
 .advisor-card::after{content:'';position:absolute;top:0;left:0;right:0;height:1.5px;background:var(--cyan);transform:scaleX(0);transform-origin:left;transition:transform 0.28s ease}
 .advisor-card{border:0.5px solid var(--border)}
 .advisor-card:hover{background:var(--dark3)}
@@ -66,7 +66,7 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 .advisor-name{font-size:14px;font-weight:400;color:var(--cream);margin-bottom:6px;line-height:1.3}
 .advisor-name a{color:inherit;text-decoration:none;border-bottom:0.5px solid rgba(0,170,223,0.3);transition:color 0.18s}
 .advisor-name a:hover{color:var(--cyan)}
-.advisor-bio{font-size:14px;color:var(--cream-dim);line-height:1.65}
+.advisor-bio{font-size:12px;color:var(--cream-dim);line-height:1.6}
 
 /* TRACK RECORD BAND */
 .track-band{background:var(--dark2);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);padding:80px 48px}
@@ -87,32 +87,11 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 .track-desc{font-size:14px;color:var(--cream-dim);line-height:1.65}
 
 /* FOOTER */
-footer {
-    border-top: 0.5px solid var(--border);
-    padding: 30px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 14px;
-  }
-  .f-nav { display: flex; gap: 24px; flex-wrap: wrap; }
-  .f-nav a {
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--cream-dim);
-    text-decoration: none;
-    transition: color 0.18s;
-  }
-  .f-nav a:hover { color: var(--cyan); }
-  .f-legal {
-    font-size: 10px;
-    color: rgba(232,228,218,0.22);
-    max-width: 520px;
-    line-height: 1.5;
-    width: 100%;
-  }
+footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+.f-nav{display:flex;gap:24px;flex-wrap:wrap}
+.f-nav a{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--cream-dim);text-decoration:none;transition:color 0.18s}
+.f-nav a:hover{color:var(--cyan)}
+.f-legal{font-size:10px;color:rgba(232,228,218,0.22);max-width:520px;line-height:1.5;width:100%}
 
 @media(max-width:768px){
   nav{padding:16px 20px}
@@ -132,7 +111,7 @@ footer {
   .track-blocks{grid-template-columns:1fr}
   .track-block{padding:28px 20px}
   .track-band{padding:50px 20px}
-  footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; }
+  footer{padding:24px 20px;flex-direction:column;align-items:flex-start}
 }
 @media(max-width:480px){
   .team-grid{grid-template-columns:1fr 1fr}
@@ -346,13 +325,13 @@ footer {
       <div class="advisor-card">
         <img class="advisor-photo" src="https://precursorearth.github.io/precursor-site/advisor-joe.jpg" alt="Dr. Joseph Batir"/>
         <div class="advisor-name"><a href="https://www.linkedin.com/in/josephfbatir/" target="_blank" rel="noopener">Dr. Joseph Batir</a></div>
-        <div class="advisor-bio">Geothermal geoscientist with 15+ years of global exploration and project development experience, led multimillion-dollar exploration programs</div>
+        <div class="advisor-bio">Geothermal geoscientist with 15+ years of global exploration and project development experience</div>
       </div>
 
       <div class="advisor-card">
         <img class="advisor-photo" src="https://precursorearth.github.io/precursor-site/advisor-wesley.jpg" alt="Wesley Lien"/>
         <div class="advisor-name"><a href="https://www.linkedin.com/in/wesleylien/" target="_blank" rel="noopener">Wesley Lien</a></div>
-        <div class="advisor-bio">Clean infrastructure finance and FOAK commercialization expert; ex-SunEdison (1GW-$1B), Pattern Energy veteran; experience in green molecule commercialization and Series A startup fundraising</div>
+        <div class="advisor-bio">Clean infrastructure finance and FOAK commercialization expert; ex-SunEdison (1GW-$1B), Pattern Energy veteran</div>
       </div>
 
     </div>
