@@ -248,12 +248,12 @@
 
   /* ── SOCIAL PROOF ── */
   .proof-band { background: var(--dark2); border-top: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); padding: 52px 64px; }
-  .proof-inner { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 0; }
-  .proof-item { flex: 1; text-align: center; min-width: 120px; padding: 0 8px; }
+  .proof-inner { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 0; }
+  .proof-item { flex: 0 0 auto; text-align: center; min-width: 140px; padding: 0 16px; }
   .proof-num { font-size: clamp(42px, 5.5vw, 76px); font-weight: 300; letter-spacing: -0.03em; color: var(--cream); line-height: 1; margin-bottom: 8px; }
   .proof-num span { color: var(--cyan); }
   .proof-label { font-size: 16px; color: var(--cream-dim); line-height: 1.55; }
-  .proof-divider { width: 0.5px; height: 60px; background: var(--border); flex-shrink: 0; margin: 0 12px; }
+  .proof-divider { width: 0.5px; height: 60px; background: var(--border); flex-shrink: 0; margin: 0 32px; }
 
   /* ── CHALLENGE ── */
   .challenge {
@@ -537,7 +537,7 @@
   .client-logo-wrap img{height:28px;width:auto;max-width:220px;max-height:100%;object-fit:contain;opacity:0.7;transition:opacity 0.2s;display:block}
   .client-logo-wrap img:hover{opacity:1}
   /* Individual tweaks for visual balance */
-  .client-arbor   img{height:32px}
+  .client-arbor   img{height:38px}
   .client-bluewhale img{height:26px}
   .client-exterra img{height:16px}
   .client-ammobia img{height:18px}
@@ -624,8 +624,9 @@
     .stat:last-child { border-bottom: none; }
 
     .proof-band { padding: 40px 20px; }
-    .proof-inner { flex-wrap: wrap; gap: 32px; }
-    .proof-item { flex: 1; min-width: 120px; }
+    .proof-inner { flex-wrap: wrap; gap: 0; }
+    .proof-item { flex: 0 0 50%; width: 50%; text-align: left; padding: 24px 20px; border-bottom: 0.5px solid var(--border); }
+    .proof-item:nth-child(odd) { border-right: 0.5px solid var(--border); }
     .proof-divider { display: none; }
     .challenge { grid-template-columns: 1fr; gap: 32px; padding: 60px 20px; }
 
@@ -768,7 +769,7 @@
   <div class="testimonial-inner">
     <div class="testimonial-slides">
       <!-- Slide 1 — David Yeh -->
-      <div class="testimonial-slide">
+      <div class="testimonial-slide active">
         <p class="testimonial-quote">To own the future global energy and industrial markets, the hardest, yet most crucial step is getting that first commercial-scale project successfully built and operating. We are the first firm designed to be a guide for the next generation of "Teslas" on their journey from pilot to FOAK to mass deployment.</p>
         <div class="testimonial-author">
           <div class="testimonial-divider"></div>
@@ -780,7 +781,7 @@
         </div>
       </div>
       <!-- Slide 2 — Arbor Energy -->
-      <div class="testimonial-slide active">
+      <div class="testimonial-slide">
         <p class="testimonial-quote">What sets Precursor apart is their ability to be a comprehensive "Chief FOAK Officer/Partner" — they can discuss oxycombustion turbines with our engineers in the morning, term sheets with investors in the afternoon, and PPAs with hyperscalers at night. That fluency was essential in structuring our successful $55 million Series A and positioning us for large-scale capital in the future.</p>
         <div class="testimonial-author">
           <div class="testimonial-divider"></div>
