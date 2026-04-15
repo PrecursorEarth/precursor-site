@@ -14,7 +14,7 @@ html{scroll-behavior:smooth}
 body{background:var(--dark);color:var(--cream);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 40px;background:rgba(5,8,10,0.94);backdrop-filter:blur(14px);border-bottom:0.5px solid var(--border)}
 .nav-links{display:flex;gap:28px;align-items:center}
-.nav-links a{font-size:11px;letter-spacing:0.09em;text-transform:uppercase;color:var(--cream-dim);text-decoration:none;transition:color 0.18s}
+.nav-links a{font-size:13px;letter-spacing:0.09em;text-transform:uppercase;color:var(--cream-dim);text-decoration:none;transition:color 0.18s}
 .nav-links a:hover,.nav-links a.active{color:var(--cyan)}
 .nav-cta{color:var(--cyan)!important;border:0.5px solid var(--cyan-dim)!important;padding:6px 16px;border-radius:3px}
 .nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
@@ -75,7 +75,7 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 .track-item{background:var(--dark2);padding:32px 28px}
 .track-blocks{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:40px}
 .track-block{background:var(--dark2);padding:36px 40px}
-.track-block-label{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--cyan);margin-bottom:24px}
+.track-block-label{font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:var(--cyan);margin-bottom:24px}
 .track-list{list-style:none;display:flex;flex-direction:column;gap:12px}
 .track-list li{font-size:16px;color:var(--cream-dim);line-height:1.6;padding-left:16px;position:relative}
 .track-list li::before{content:"—";position:absolute;left:0;color:var(--cyan);opacity:0.5;font-size:11px}
@@ -83,7 +83,7 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 .track-prose:last-child{margin-bottom:0}
 .track-prose a{color:var(--cyan);text-decoration:none;border-bottom:0.5px solid var(--cyan-dim);transition:opacity 0.18s}
 .track-prose a:hover{opacity:0.75}
-.track-company{font-size:13px;font-weight:400;color:var(--cyan);margin-bottom:6px;letter-spacing:0.04em}
+.track-company{font-size:15px;font-weight:400;color:var(--cyan);margin-bottom:6px;letter-spacing:0.04em}
 .track-desc{font-size:14px;color:var(--cream-dim);line-height:1.65}
 
 /* FOOTER */
@@ -191,14 +191,20 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
       <!-- Block 2: The Team -->
       <div class="track-block">
         <div class="track-block-label">The team</div>
-        <p class="track-prose">Precursor fields the top team in FOAK — $50B+ deployed across revolutionary projects, 120+ years of collective experience.</p>
+        <p class="track-prose">Precursor fields the top team in FOAK — $50B+ deployed across revolutionary projects, 100+ years of collective experience.</p>
         <p class="track-prose">We helped spark the electrification of transport (Tesla), the US utility-scale solar sector (LPO), and the geothermal (Fervo) and nuclear renaissance (Vogtle).</p>
+        <div style="display:flex;align-items:center;gap:24px;margin-top:20px;flex-wrap:wrap">
+          <img src="https://precursorearth.github.io/precursor-site/track-tesla.png" alt="Tesla" style="height:28px;width:auto;opacity:0.75;object-fit:contain"/>
+          <img src="https://precursorearth.github.io/precursor-site/track-vogtle.png" alt="Plant Vogtle" style="height:34px;width:auto;opacity:0.75;object-fit:contain"/>
+          <img src="https://precursorearth.github.io/precursor-site/track-fervo.png" alt="Fervo Energy" style="height:20px;width:auto;opacity:0.75;object-fit:contain"/>
+          <img src="https://precursorearth.github.io/precursor-site/track-lpo.png" alt="DOE Loan Programs Office" style="height:28px;width:auto;opacity:0.75;object-fit:contain"/>
+        </div>
       </div>
 
       <!-- Block 3: Thought Leadership -->
       <div class="track-block">
         <div class="track-block-label">Thought leadership</div>
-        <p class="track-prose">We helped establish the FOAK market through defining thought leadership — CTVC's FOAK 101 articles (60K+ reads each) and the Catalyst podcast (~20K listens).</p>
+        <p class="track-prose">We helped establish the FOAK market through defining thought leadership — <a href="https://www.ctvc.co/venture-to-foak-duolingo/" target="_blank" rel="noopener">CTVC's FOAK 101 articles</a> (60K+ reads each) and the <a href="https://www.latitudemedia.com/news/catalyst-financing-first-of-a-kind-climate-assets/" target="_blank" rel="noopener">Catalyst podcast</a> (~20K listens).</p>
       </div>
 
     </div>
@@ -209,6 +215,14 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
 <!-- TEAM -->
 <div class="team-section">
   <div class="section-tag">Team members</div>
+  <!-- Track record logos -->
+  <div style="display:flex;align-items:center;gap:32px;flex-wrap:wrap;margin-bottom:40px;padding:20px 0;border-bottom:0.5px solid var(--border)">
+    <div style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--cyan);opacity:0.6;flex-shrink:0">Built on</div>
+    <img src="https://precursorearth.github.io/precursor-site/track-tesla.png" alt="Tesla" style="height:28px;width:auto;opacity:0.8"/>
+    <img src="https://precursorearth.github.io/precursor-site/track-fervo.png" alt="Fervo Energy" style="height:18px;width:auto;opacity:0.8"/>
+    <img src="https://precursorearth.github.io/precursor-site/track-vogtle.png" alt="Plant Vogtle" style="height:32px;width:auto;opacity:0.8"/>
+    <img src="https://precursorearth.github.io/precursor-site/track-lpo.png" alt="DOE Loan Programs Office" style="height:30px;width:auto;opacity:0.8"/>
+  </div>
   <div class="team-grid">
 
     <div class="team-card">
@@ -217,7 +231,7 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
         <div class="team-avatar-placeholder" style="display:none">DY</div>
       </div>
       <div class="team-name"><a href="https://www.linkedin.com/in/david-yeh-393177/" target="_blank" rel="noopener">David Yeh</a></div>
-      <div class="team-role">FOAK Leader<br>30-year Climate Investor<br>Obama White House Infrastructure Lead</div>
+      <div class="team-role">Founder<br>25+ yrs VC &amp; infra – Tesla, Fervo, Procore<br>White House infra &amp; sovereign wealth fund lead<br>Started $Bn energy banking partnership in China<br>Thought leader who catalyzed the FOAK market<br>Dartmouth, Wharton MBA</div>
     </div>
 
     <div class="team-card">
@@ -226,7 +240,7 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
         <div class="team-avatar-placeholder" style="display:none">DK</div>
       </div>
       <div class="team-name"><a href="https://www.linkedin.com/in/dong-kim-255302b" target="_blank" rel="noopener">Dong Kim</a></div>
-      <div class="team-role">30-year DOE Veteran<br>Executive Director & Chief Engineer at LPO</div>
+      <div class="team-role">35+ yrs DOE veteran<br>LPO Director + COO + Chief Engineer ($43B FOAK portfolio)<br>Led engineering due diligence and portfolio management<br>ChemE, MS Env. Eng, GWU</div>
     </div>
 
     <div class="team-card">
@@ -235,7 +249,7 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
         <div class="team-avatar-placeholder" style="display:none">BY</div>
       </div>
       <div class="team-name"><a href="https://www.linkedin.com/in/bernardyoo/" target="_blank" rel="noopener">Bernie Yoo</a></div>
-      <div class="team-role">Deeptech Executive<br>Exited Venture-backed Founder/CEO</div>
+      <div class="team-role">Exited Founder/CEO of $100M revenue company<br>Deeptech exec with hyper-growth scaling experience ($500M+ raised)<br>Strategic finance + project planning veteran<br>Morgan Stanley energy banker &amp; Harvard alum</div>
     </div>
 
     <div class="team-card">
@@ -244,7 +258,7 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
         <div class="team-avatar-placeholder" style="display:none">MW</div>
       </div>
       <div class="team-name"><a href="https://www.linkedin.com/in/mwalton07/" target="_blank" rel="noopener">Michael Walton</a></div>
-      <div class="team-role">Government Funding Expert<br>Energy Transition Strategist</div>
+      <div class="team-role">20+ years FOAK project development ($20B)<br>White House Advisor<br>CEO-GM-Partner, Energy Transition Finance, Emerald Strategy Group, Green Spaces<br>HBS Young American Leader · ETH Zurich, UT Architecture</div>
     </div>
 
     <div class="team-card">
@@ -253,7 +267,7 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
         <div class="team-avatar-placeholder" style="display:none">PM</div>
       </div>
       <div class="team-name"><a href="https://www.linkedin.com/in/paul-mcdonough-b036322b4/" target="_blank" rel="noopener">Paul McDonough</a></div>
-      <div class="team-role">NET Power's FOAK Developer<br>40-year Project Veteran</div>
+      <div class="team-role">NET Power's FOAK Developer<br>40-year Project Veteran<br>Built 10 power plants<br>CCUS expert</div>
     </div>
 
   </div>
