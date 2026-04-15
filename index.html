@@ -623,9 +623,9 @@
     .stat { border-right: none; border-bottom: 0.5px solid var(--border); padding: 28px 20px; }
     .stat:last-child { border-bottom: none; }
 
-    .proof-band { padding: 40px 20px; }
-    .proof-inner { flex-wrap: wrap; gap: 0; align-items: flex-start; }
-    .proof-item { flex: 0 0 50%; width: 50%; text-align: left; padding: 24px 20px; border-bottom: 0.5px solid var(--border); vertical-align: top; }
+    .proof-band { padding: 0; }
+    .proof-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+    .proof-item { flex: unset; width: auto; min-width: unset; padding: 28px 20px; text-align: left; border-bottom: 0.5px solid var(--border); border-right: none; }
     .proof-item:nth-child(odd) { border-right: 0.5px solid var(--border); }
     .proof-divider { display: none; }
     .challenge { grid-template-columns: 1fr; gap: 32px; padding: 60px 20px; }
