@@ -89,11 +89,37 @@ nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-co
 .track-desc{font-size:15px;color:var(--cream-dim);line-height:1.65}
 
 /* FOOTER */
-footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;width:100%;position:relative;overflow:hidden}
-.f-nav{display:flex;gap:24px;flex-wrap:wrap}
-.f-nav a{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--cream-dim);text-decoration:none;transition:color 0.18s}
-.f-nav a:hover{color:var(--cyan)}
-.f-legal{font-size:10px;color:rgba(232,228,218,0.22);max-width:520px;line-height:1.5;width:100%}
+footer {
+    border-top: 0.5px solid var(--border);
+    padding: 30px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+  }
+  .f-nav { display: flex; gap: 24px; flex-wrap: wrap; }
+  .f-nav a {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cream-dim);
+    text-decoration: none;
+    transition: color 0.18s;
+  }
+  .f-nav a:hover { color: var(--cyan); }
+  .f-legal {
+    font-size: 10px;
+    color: rgba(232,228,218,0.22);
+    max-width: 520px;
+    line-height: 1.5;
+    width: 100%;
+  }
 
 @media(max-width:768px){
   nav{padding:16px 20px}
@@ -182,7 +208,7 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
           <li>Secured <span style="color:var(--cyan)">billion-dollar</span> offtakes with hyperscalers</li>
           <li>Reduced client CAPEX by <span style="color:var(--cyan)">tens of millions</span></li>
           <li>Raised <span style="color:var(--cyan)">$100M+</span> in FOAK capital</li>
-          <li>IDed $100's of millions in sales pipeline</li>
+          <li>ID'd $100's of <span style="color:var(--cyan)">billions</span> in sales pipeline</li>
           <li>Negotiated multiple JVs with Global 1000 companies</li>
         </ul>
       </div>
