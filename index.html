@@ -104,6 +104,20 @@
     background-position: center center !important;
     background-repeat: no-repeat !important;
   }
+  /* Desktop: use full-size WebP with JPEG fallback via image-set */
+  .hero-bg-rocket {
+    background-image: url('rocket.jpg'); /* fallback for very old browsers */
+    background-image: image-set(url('rocket.webp') type('image/webp'), url('rocket.jpg') type('image/jpeg'));
+    background-image: -webkit-image-set(url('rocket.webp') type('image/webp'), url('rocket.jpg') type('image/jpeg'));
+  }
+  /* Mobile: serve the smaller image (1000px wide instead of 2000px) */
+  @media (max-width: 768px) {
+    .hero-bg-rocket {
+      background-image: url('rocket-mobile.jpg');
+      background-image: image-set(url('rocket-mobile.webp') type('image/webp'), url('rocket-mobile.jpg') type('image/jpeg'));
+      background-image: -webkit-image-set(url('rocket-mobile.webp') type('image/webp'), url('rocket-mobile.jpg') type('image/jpeg'));
+    }
+  }
   .hero-bg svg { width: 100%; height: 100%; }
   .hero-overlay {
     position: absolute;
@@ -652,6 +666,9 @@
 </style>
 
 <!-- SEO META -->
+<!-- Preload hero image — highest priority so LCP renders fast -->
+<link rel="preload" as="image" href="rocket.webp" type="image/webp" fetchpriority="high" media="(min-width: 769px)"/>
+<link rel="preload" as="image" href="rocket-mobile.webp" type="image/webp" fetchpriority="high" media="(max-width: 768px)"/>
 <meta name="description" content="Precursor is the first-of-a-kind (FOAK) advisory firm for climate infrastructure — investment banking, offtake brokerage, and business-building."/>
 <link rel="canonical" href="https://precursor.earth/"/>
 <meta name="robots" content="index,follow"/>
@@ -731,7 +748,7 @@
 
 <!-- ── HERO ── -->
 <section class="hero" id="about">
-  <div class="hero-bg" aria-hidden="true" style="background:url('rocket.jpg') center center/cover no-repeat;"></div>
+  <div class="hero-bg hero-bg-rocket" aria-hidden="true"></div>
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="hero-overlay-btm" aria-hidden="true"></div>
 
@@ -774,7 +791,7 @@
     <div class="proof-divider"></div>
     <div class="proof-item">
       <div class="proof-num">1<span>+ Yr</span></div>
-      <div class="proof-label">$10s of millions saved<br>on CAPEX</div>
+      <div class="proof-label">$10s of millions saving<br>on CAPEX</div>
     </div>
     <div class="proof-divider"></div>
     <div class="proof-item">
@@ -788,28 +805,28 @@
 <div class="client-band">
   <div class="client-label">Clients &amp; Track Record</div>
   <div class="client-track">
-    <div class="client-logo-wrap client-arbor"><img src="client-arbor.png" alt="Arbor Energy"/></div>
-    <div class="client-logo-wrap client-bluewhale"><img src="client-bluewhale.png" alt="Blue Whale Materials"/></div>
-    <div class="client-logo-wrap client-exterra"><img src="client-exterra.svg" alt="Exterra Technologies"/></div>
-    <div class="client-logo-wrap client-ammobia"><img src="client-ammobia.png" alt="Ammobia"/></div>
-    <div class="client-logo-wrap client-swiftsolar"><img src="client-swiftsolar.png" alt="Swift Solar"/></div>
-    <div class="client-logo-wrap client-northx"><img src="client-northx.png" alt="NorthX Climate Tech"/></div>
-    <div class="client-logo-wrap client-viasep"><img src="client-viasep.png" alt="Via Separations"/></div>
-    <div class="client-logo-wrap client-tesla"><img src="track-tesla.png" alt="Tesla"/></div>
-    <div class="client-logo-wrap client-fervo"><img src="track-fervo.png" alt="Fervo Energy"/></div>
-    <div class="client-logo-wrap client-vogtle"><img src="track-vogtle.png" alt="Plant Vogtle"/></div>
-    <div class="client-logo-wrap client-climateexchange"><img src="track-climateexchange.png" alt="Climate Exchange"/></div>
-    <div class="client-logo-wrap client-arbor"><img src="client-arbor.png" alt="Arbor Energy"/></div>
-    <div class="client-logo-wrap client-bluewhale"><img src="client-bluewhale.png" alt="Blue Whale Materials"/></div>
-    <div class="client-logo-wrap client-exterra"><img src="client-exterra.svg" alt="Exterra Technologies"/></div>
-    <div class="client-logo-wrap client-ammobia"><img src="client-ammobia.png" alt="Ammobia"/></div>
-    <div class="client-logo-wrap client-swiftsolar"><img src="client-swiftsolar.png" alt="Swift Solar"/></div>
-    <div class="client-logo-wrap client-northx"><img src="client-northx.png" alt="NorthX Climate Tech"/></div>
-    <div class="client-logo-wrap client-viasep"><img src="client-viasep.png" alt="Via Separations"/></div>
-    <div class="client-logo-wrap client-tesla"><img src="track-tesla.png" alt="Tesla"/></div>
-    <div class="client-logo-wrap client-fervo"><img src="track-fervo.png" alt="Fervo Energy"/></div>
-    <div class="client-logo-wrap client-vogtle"><img src="track-vogtle.png" alt="Plant Vogtle"/></div>
-    <div class="client-logo-wrap client-climateexchange"><img src="track-climateexchange.png" alt="Climate Exchange"/></div>
+    <div class="client-logo-wrap client-arbor"><img loading="lazy" decoding="async" src="client-arbor.png" alt="Arbor Energy"/></div>
+    <div class="client-logo-wrap client-bluewhale"><img loading="lazy" decoding="async" src="client-bluewhale.png" alt="Blue Whale Materials"/></div>
+    <div class="client-logo-wrap client-exterra"><img loading="lazy" decoding="async" src="client-exterra.svg" alt="Exterra Technologies"/></div>
+    <div class="client-logo-wrap client-ammobia"><img loading="lazy" decoding="async" src="client-ammobia.png" alt="Ammobia"/></div>
+    <div class="client-logo-wrap client-swiftsolar"><img loading="lazy" decoding="async" src="client-swiftsolar.png" alt="Swift Solar"/></div>
+    <div class="client-logo-wrap client-northx"><img loading="lazy" decoding="async" src="client-northx.png" alt="NorthX Climate Tech"/></div>
+    <div class="client-logo-wrap client-viasep"><img loading="lazy" decoding="async" src="client-viasep.png" alt="Via Separations"/></div>
+    <div class="client-logo-wrap client-tesla"><img loading="lazy" decoding="async" src="track-tesla.png" alt="Tesla"/></div>
+    <div class="client-logo-wrap client-fervo"><img loading="lazy" decoding="async" src="track-fervo.png" alt="Fervo Energy"/></div>
+    <div class="client-logo-wrap client-vogtle"><img loading="lazy" decoding="async" src="track-vogtle.png" alt="Plant Vogtle"/></div>
+    <div class="client-logo-wrap client-climateexchange"><img loading="lazy" decoding="async" src="track-climateexchange.png" alt="Climate Exchange"/></div>
+    <div class="client-logo-wrap client-arbor"><img loading="lazy" decoding="async" src="client-arbor.png" alt="Arbor Energy"/></div>
+    <div class="client-logo-wrap client-bluewhale"><img loading="lazy" decoding="async" src="client-bluewhale.png" alt="Blue Whale Materials"/></div>
+    <div class="client-logo-wrap client-exterra"><img loading="lazy" decoding="async" src="client-exterra.svg" alt="Exterra Technologies"/></div>
+    <div class="client-logo-wrap client-ammobia"><img loading="lazy" decoding="async" src="client-ammobia.png" alt="Ammobia"/></div>
+    <div class="client-logo-wrap client-swiftsolar"><img loading="lazy" decoding="async" src="client-swiftsolar.png" alt="Swift Solar"/></div>
+    <div class="client-logo-wrap client-northx"><img loading="lazy" decoding="async" src="client-northx.png" alt="NorthX Climate Tech"/></div>
+    <div class="client-logo-wrap client-viasep"><img loading="lazy" decoding="async" src="client-viasep.png" alt="Via Separations"/></div>
+    <div class="client-logo-wrap client-tesla"><img loading="lazy" decoding="async" src="track-tesla.png" alt="Tesla"/></div>
+    <div class="client-logo-wrap client-fervo"><img loading="lazy" decoding="async" src="track-fervo.png" alt="Fervo Energy"/></div>
+    <div class="client-logo-wrap client-vogtle"><img loading="lazy" decoding="async" src="track-vogtle.png" alt="Plant Vogtle"/></div>
+    <div class="client-logo-wrap client-climateexchange"><img loading="lazy" decoding="async" src="track-climateexchange.png" alt="Climate Exchange"/></div>
   </div>
 </div>
 
