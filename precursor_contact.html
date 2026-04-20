@@ -164,7 +164,11 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
   <div class="contact-right">
     <h1>Contact us</h1>
 
-    <form id="contact-form" onsubmit="handleSubmit(event)" novalidate>
+    <form id="contact-form" action="https://formspree.io/f/xnjlbnnj" method="POST" onsubmit="handleSubmit(event)" novalidate>
+      <!-- Honeypot: bots fill this, humans don't see it. Formspree will silently discard if filled. -->
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-5000px;width:1px;height:1px;opacity:0;" aria-hidden="true"/>
+      <!-- Tell Formspree what to put in the email subject line -->
+      <input type="hidden" name="_subject" value="New Precursor contact form submission"/>
       <div class="form-row">
         <div class="form-group">
           <label for="first-name">First name</label>
@@ -195,7 +199,14 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
     <div class="form-success" id="form-success">
       <div class="form-success-icon">→</div>
       <h3>Message received</h3>
-      <p>Thank you for reaching out.</p>
+      <p>Thank you for reaching out. We'll be in touch shortly.</p>
+    </div>
+
+    <div class="form-success" id="form-error" style="display:none;">
+      <div class="form-success-icon" style="color:#ff6b6b;">!</div>
+      <h3>Something went wrong</h3>
+      <p style="margin-bottom:12px;">Please try again, or email us directly.</p>
+      <button type="button" onclick="resetForm()" class="btn-submit" style="max-width:200px;margin:0 auto;display:inline-block;">Try again</button>
     </div>
   </div>
 
@@ -255,13 +266,60 @@ footer{border-top:0.5px solid var(--border);padding:30px 40px;display:flex;justi
   const t=document.getElementById('nav-toggle'),l=document.getElementById('nav-links');
   if(t&&l){t.addEventListener('click',()=>l.classList.toggle('open'));l.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>l.classList.remove('open')))}
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-    if (!email || !message) return;
-    document.getElementById('contact-form').style.display = 'none';
-    document.getElementById('form-success').style.display = 'block';
+    const form = document.getElementById('contact-form');
+    const submitBtn = form.querySelector('.btn-submit');
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    // Basic client-side validation
+    if (!email || !message) {
+      if (!email) document.getElementById('email').focus();
+      else document.getElementById('message').focus();
+      return;
+    }
+
+    // Loading state
+    const originalBtnText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.style.opacity = '0.7';
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        form.style.display = 'none';
+        document.getElementById('form-error').style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+        form.reset();
+      } else {
+        // Formspree returned an error (e.g., validation, quota)
+        const data = await response.json().catch(() => ({}));
+        console.warn('Formspree error:', data);
+        throw new Error('Submission failed');
+      }
+    } catch (err) {
+      // Network error or non-OK response
+      form.style.display = 'none';
+      document.getElementById('form-success').style.display = 'none';
+      document.getElementById('form-error').style.display = 'block';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalBtnText;
+      submitBtn.style.opacity = '';
+    }
+  }
+
+  function resetForm() {
+    document.getElementById('form-error').style.display = 'none';
+    document.getElementById('form-success').style.display = 'none';
+    document.getElementById('contact-form').style.display = '';
   }
 </script>
 </body>
